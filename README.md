@@ -42,26 +42,29 @@ For a detailed breakdown, refer to [HOWTO_SPRINGBOOT.md](HOWTO_SPRINGBOOT.md).
    - **Swagger API Docs**: `http://localhost:8080/swagger-ui.html`
 
 ## Testing the Application
-To run all tests. This will execute all test cases in the src/test/java/ directory:
+To run only JUnit tests. This will execute all tests cases in the src/test/java/ directory, excluding folder *integration* and *performance*:
+
 ```sh
 mvn test
 ```
-To run only unit tests:
+To run only some specific tests:
 ```sh
 mvn -Dtest=UserServiceTest,BookServiceTest test
-mvn -Dtest=*ServiceTest test
 ```
+
+**Important** Integration tests will only work if the MySQL database is previously running.
+
 To run integration tests:
 ```sh
-mvn -Dtest=LibraryIntegrationTest test
+mvn -Pintegration integration-test
 ```
 
 To run performance tests:
 ```sh
-mvn -Dtest=PerformanceTest test
+mvn -Pperformance integration-test
 ```
 
-To run all tests with more verbose output:
+To run tests with more verbose output:
 ```sh
 mvn test -Dspring-boot.run.profiles=test
 ```
