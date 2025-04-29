@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.service</a> &gt; <span class="el_source">BookService.java</span></div><h1>BookService.java</h1><pre class="source lang-java linenums">package com.example.restapi.service;
+
+import com.example.restapi.model.Book;
+import com.example.restapi.model.User;
+import com.example.restapi.repository.BookRepository;
+import com.example.restapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * Service class that provides business logic for managing {@link Book} and borrowing operations.
+ */
+@Service
+<span class="fc" id="L16">public class BookService {</span>
+    /** Repository for managing {@link Book} entities. */
+    @Autowired
+    private BookRepository bookRepository;
+    
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    /**
+     * Retrieves all books from the repository.
+     *
+     * @return a list of all {@link Book} objects
+     */
+    public List&lt;Book&gt; getAllBooks() {
+<span class="fc" id="L31">        return bookRepository.findAll();</span>
+    }
+    
+    /**
+     * Retrieves a book by its unique identifier.
+     *
+     * @param id the ID of the book to retrieve
+     * @return an {@link Optional} containing the found {@link Book}, or empty if not found
+     */
+    public Optional&lt;Book&gt; getBookById(Long id) {
+<span class="fc" id="L41">        return bookRepository.findById(id);</span>
+    }
+    
+    /**
+     * Creates a new book entry in the repository.
+     *
+     * @param book the {@link Book} object to be created
+     * @return the created {@link Book} object
+     */
+    public Book createBook(Book book) {
+<span class="fc" id="L51">        System.out.println(&quot;Book Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor());</span>
+<span class="fc" id="L52">        return bookRepository.save(book);</span>
+    }
+    
+    /**
+     * Updates an existing book's details.
+     *
+     * @param id the ID of the book to update
+     * @param bookDetails the updated {@link Book} details
+     * @return the updated {@link Book} object
+     * @throws Exception if the book with the specified ID is not found
+     */
+    public Book updateBook(Long id, Book bookDetails) throws Exception {
+<span class="nc" id="L64">        return bookRepository.findById(id).map(book -&gt; {</span>
+<span class="nc" id="L65">            book.setTitle(bookDetails.getTitle());</span>
+<span class="nc" id="L66">            book.setAuthor(bookDetails.getAuthor());</span>
+<span class="nc" id="L67">            return bookRepository.save(book);</span>
+<span class="nc" id="L68">        }).orElseThrow(() -&gt; new Exception(&quot;Book not found&quot;));</span>
+    }
+    
+    /**
+	 * Deletes the Book identified by id.
+	 * deleteBook() needs to be public because it is used
+	 * by clients who wish to remove books identified by id
+	 */
+    public void deleteBook(Long id) {
+<span class="fc" id="L77">        bookRepository.deleteById(id);</span>
+<span class="fc" id="L78">    }</span>
+    
+    public boolean borrowBook(Long bookId, Long userId) {
+<span class="fc" id="L81">        Optional&lt;Book&gt; optionalBook = bookRepository.findById(bookId);</span>
+<span class="fc" id="L82">        Optional&lt;User&gt; optionalUser = userRepository.findById(userId);</span>
+<span class="pc bpc" id="L83" title="2 of 4 branches missed.">        if (optionalBook.isPresent() &amp;&amp; optionalUser.isPresent()) {</span>
+<span class="fc" id="L84">            Book book = optionalBook.get();</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">            if (book.getBorrower() == null) {</span>
+<span class="fc" id="L86">                book.setBorrower(optionalUser.get());</span>
+<span class="fc" id="L87">                bookRepository.save(book);</span>
+<span class="fc" id="L88">                return true;</span>
+            }
+        }
+<span class="nc" id="L91">        return false;</span>
+    }
+    
+    /**
+     * Returns a borrowed book, making it available for others.
+     *
+     * @param bookId the ID of the book to return
+     * @return {@code true} if the return was successful, {@code false} otherwise
+     */
+    public boolean returnBook(Long bookId) {
+<span class="fc" id="L101">        Optional&lt;Book&gt; optionalBook = bookRepository.findById(bookId);</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">        if (optionalBook.isPresent()) {</span>
+<span class="fc" id="L103">            Book book = optionalBook.get();</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">            if (book.getBorrower() != null) {</span>
+<span class="fc" id="L105">                book.setBorrower(null);</span>
+<span class="fc" id="L106">                bookRepository.save(book);</span>
+<span class="fc" id="L107">                return true;</span>
+            }
+        }
+<span class="nc" id="L110">        return false;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
