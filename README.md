@@ -3,6 +3,11 @@
 ## Purpose
 This application allows users to borrow and return books seamlessly through a shared platform. Users can manage book availability, track borrowed books, and return them, facilitating an efficient book-sharing system.
 
+## Documentation 
+Next you can find the pages corresponding to:
+1. [Technical documentation](https://dipina.github.io/SpringBootLibrary/doxygen/html/) created with Doxygen
+2. [Test reports](https://dipina.github.io/SpringBootLibrary/site/) created after running Coberture, Unit test, Performance and Integration tests 
+
 ## Architecture Overview
 The application is built using **Spring Boot**, following the **MVC (Model-View-Controller) pattern**:
 - **Model**: Defines the entities and database interaction via JPA.
