@@ -1,0 +1,143 @@
+\doxysection{com.\+example.\+restapi.\+controller.\+User\+Controller Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{User\+Controller}} (User\+Service user\+Service)
+\item 
+Response\+Entity$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{get\+User\+By\+Id}} (@Path\+Variable Long id)
+\item 
+Response\+Entity$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{get\+User\+By\+Username}} (@Path\+Variable String username)
+\item 
+List$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_aa02ad3aa1df23f9a1d6c71a6ece5b87f}{get\+All\+Users}} ()
+\item 
+Response\+Entity$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}{create\+User}} (@Request\+Body User user)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{register}} (@Request\+Body User user)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{login}} (@Request\+Body User user, Http\+Session session)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b}{check\+Session}} (Http\+Session session)
+\item 
+Response\+Entity$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a9f3bd55cccbc26118c4561d80d953371}{logout}} (Http\+Session session)
+\item 
+Response\+Entity$<$ Void $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d}{delete\+User}} (@Path\+Variable Long id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00024}{24}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!UserController@{UserController}}
+\index{UserController@{UserController}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{UserController()}{UserController()}}
+{\footnotesize\ttfamily com.\+example.\+restapi.\+controller.\+User\+Controller.\+User\+Controller (\begin{DoxyParamCaption}\item[{User\+Service}]{user\+Service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00031}{31}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!checkSession@{checkSession}}
+\index{checkSession@{checkSession}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{checkSession()}{checkSession()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+check\+Session (\begin{DoxyParamCaption}\item[{Http\+Session}]{session }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00087}{87}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!createUser@{createUser}}
+\index{createUser@{createUser}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{createUser()}{createUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$ User $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+create\+User (\begin{DoxyParamCaption}\item[{@Request\+Body User}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00057}{57}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!deleteUser@{deleteUser}}
+\index{deleteUser@{deleteUser}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{deleteUser()}{deleteUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Void $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+delete\+User (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00103}{103}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_aa02ad3aa1df23f9a1d6c71a6ece5b87f}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_aa02ad3aa1df23f9a1d6c71a6ece5b87f} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily List$<$ User $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00052}{52}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!getUserById@{getUserById}}
+\index{getUserById@{getUserById}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{getUserById()}{getUserById()}}
+{\footnotesize\ttfamily Response\+Entity$<$ User $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+get\+User\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00036}{36}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!getUserByUsername@{getUserByUsername}}
+\index{getUserByUsername@{getUserByUsername}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{getUserByUsername()}{getUserByUsername()}}
+{\footnotesize\ttfamily Response\+Entity$<$ User $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+get\+User\+By\+Username (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00044}{44}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!login@{login}}
+\index{login@{login}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+login (\begin{DoxyParamCaption}\item[{@Request\+Body User}]{user,  }\item[{Http\+Session}]{session }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00072}{72}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a9f3bd55cccbc26118c4561d80d953371}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a9f3bd55cccbc26118c4561d80d953371} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!logout@{logout}}
+\index{logout@{logout}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily Response\+Entity$<$ String $>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+logout (\begin{DoxyParamCaption}\item[{Http\+Session}]{session }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00096}{96}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6} 
+\index{com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}!register@{register}}
+\index{register@{register}!com.example.restapi.controller.UserController@{com.example.restapi.controller.UserController}}
+\doxysubsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+User\+Controller.\+register (\begin{DoxyParamCaption}\item[{@Request\+Body User}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_controller_8java_source_l00062}{62}} of file \mbox{\hyperlink{_user_controller_8java_source}{User\+Controller.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/controller/\mbox{\hyperlink{_user_controller_8java}{User\+Controller.\+java}}\end{DoxyCompactItemize}

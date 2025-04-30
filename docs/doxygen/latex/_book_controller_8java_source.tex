@@ -1,0 +1,71 @@
+\doxysection{Book\+Controller.\+java}
+\hypertarget{_book_controller_8java_source}{}\label{_book_controller_8java_source}\index{src/main/java/com/example/restapi/controller/BookController.java@{src/main/java/com/example/restapi/controller/BookController.java}}
+\mbox{\hyperlink{_book_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1example_1_1restapi_1_1controller}{00001}}\ \textcolor{keyword}{package\ }com.example.restapi.controller;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.example.restapi.service.BookService;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.springframework.http.ResponseEntity;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.springframework.web.bind.annotation.*;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00009}00009\ \textcolor{keyword}{import}\ io.swagger.v3.oas.annotations.Hidden;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00014}00014\ @RestController}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00015}00015\ @RequestMapping(\textcolor{stringliteral}{"{}/api/books"{}})}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00016}00016\ @Hidden\ \ \textcolor{comment}{//\ This\ will\ hide\ the\ entire\ BookController\ from\ Swagger}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00017}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{BookController}}\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00019}00019\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ BookService\ bookService;}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00022}00022\ \ \ \ \ @GetMapping}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00023}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798}{getAllBooks}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookService.getAllBooks();}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00027}00027\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/\{id\}"{}})}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00028}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad23204694137593d8a48bd81342aeeb1}{00028}}\ \ \ \ \ public\ ResponseEntity<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad23204694137593d8a48bd81342aeeb1}{getBookById}}(@PathVariable\ Long\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ Optional<Book>\ book\ =\ bookService.getBookById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ book.map(ResponseEntity::ok).orElseGet(()\ -\/>\ ResponseEntity.notFound().build());}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00033}00033\ \ \ \ \ @PostMapping}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00034}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ ResponseEntity<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3}{createBook}}(@RequestBody\ Book\ book)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}***Book\ Title:\ "{}}\ +\ book.getTitle()\ +\ \textcolor{stringliteral}{"{},\ Author:\ "{}}\ +\ book.getAuthor());}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ Book\ createdBook\ =\ bookService.createBook(book);}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(createdBook);}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.badRequest().build();}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00045}00045\ \ \ \ \ @PutMapping(\textcolor{stringliteral}{"{}/\{id\}"{}})}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00046}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad65e19040f9ffd0d1ce992405e76a88d}{00046}}\ \ \ \ \ public\ ResponseEntity<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad65e19040f9ffd0d1ce992405e76a88d}{updateBook}}(@PathVariable\ Long\ \textcolor{keywordtype}{id},\ @RequestBody\ Book\ bookDetails)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Book\ updatedBook\ =\ bookService.updateBook(\textcolor{keywordtype}{id},\ bookDetails);}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(updatedBook);}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.badRequest().build();}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00055}00055\ \ \ \ \ @DeleteMapping(\textcolor{stringliteral}{"{}/\{id\}"{}})}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00056}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825}{00056}}\ \ \ \ \ public\ ResponseEntity<Void>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825}{deleteBook}}(@PathVariable\ Long\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ Optional<Book>\ book\ =\ bookService.getBookById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (book.isPresent())\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ bookService.deleteBook(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.noContent().build();}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.notFound().build();}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_controller_8java_source_l00065}00065\ \}}
+
+\end{DoxyCode}

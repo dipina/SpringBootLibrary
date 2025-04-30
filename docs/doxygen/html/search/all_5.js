@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['findactiveborrowingbybookidanduserid_0',['findActiveBorrowingByBookIdAndUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#ae95ea58888e07079e6c68cd6065eb2dc',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findactiveborrowingsbybookid_1',['findActiveBorrowingsByBookId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#ad1322efaf106fb480504860ccab71093',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findactiveborrowingsbybookidanduserid_2',['findActiveBorrowingsByBookIdAndUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#aea6b0f3192e1ab446a1a131fc731e333',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findbooksborrowedbyuserid_3',['findBooksBorrowedByUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#abf82a32e61062e4964ac690416e6e180',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findbooksbyuserid_4',['findBooksByUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a0041700cb7b137f8ff8fda905da731b6',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findborrowingsbybookidanduserid_5',['findBorrowingsByBookIdAndUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a65e93501d1ad0dfaa63fc87a8b9a10cf',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findbybookid_6',['findByBookId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a0a5d7745ede3389bf3db4234c1008f85',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findbyuserid_7',['findByUserId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#ad02dffcc224f81a9d0de059d261340a9',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findbyusername_8',['findbyusername',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository.html#a773e262493f9e5c1e689141bd9053d72',1,'com.example.restapi.repository.UserRepository.findByUsername()'],['../classcom_1_1example_1_1restapi_1_1service_1_1_user_service.html#a8e36a1841202d98371adc125804b9949',1,'com.example.restapi.service.UserService.findByUsername()']]],
+  ['findlatestborrowedbook_9',['findLatestBorrowedBook',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a8e18b866d1347fe9431609b1818d2be7',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['findlatestborrowing_10',['findLatestBorrowing',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a5a7b3563fcb3826153e4a63656e0b090',1,'com::example::restapi::repository::BorrowingRepository']]]
+];

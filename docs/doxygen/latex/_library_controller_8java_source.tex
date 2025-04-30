@@ -1,0 +1,119 @@
+\doxysection{Library\+Controller.\+java}
+\hypertarget{_library_controller_8java_source}{}\label{_library_controller_8java_source}\index{src/main/java/com/example/restapi/controller/LibraryController.java@{src/main/java/com/example/restapi/controller/LibraryController.java}}
+\mbox{\hyperlink{_library_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.restapi.controller;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.example.restapi.model.User;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00006}00006\ \textcolor{keyword}{import}\ jakarta.servlet.http.HttpSession;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.springframework.http.ResponseEntity;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00010}00010\ \textcolor{keyword}{import}\ org.springframework.web.bind.annotation.*;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00011}00011\ \textcolor{keyword}{import}\ io.swagger.v3.oas.annotations.tags.Tag;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.util.Map;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00015}00015\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00017}00017\ @RestController}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00018}00018\ @RequestMapping(\textcolor{stringliteral}{"{}/api/library"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00019}00019\ @Tag(name\ =\ \textcolor{stringliteral}{"{}Library\ API"{}},\ description\ =\ \textcolor{stringliteral}{"{}Operations\ to\ manage\ a\ Library\ which\ correlates\ books\ and\ users\ information"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00020}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller}{00020}}\ public\ class\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller}{LibraryController}}\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{UserController}}\ userController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{BookController}}\ bookController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{BorrowingController}}\ borrowingController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00026}00026\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00027}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_afe2aabdab29cd33b4945414311afb29c}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_afe2aabdab29cd33b4945414311afb29c}{LibraryController}}(\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{UserController}}\ userController,\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{BookController}}\ bookController,\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{BorrowingController}}\ borrowingController)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ this.userController\ =\ userController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ this.bookController\ =\ bookController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ this.borrowingController\ =\ borrowingController;}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ User\ registration}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00036}00036\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/users/register"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00037}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0262876ba24d168df3bea12dcf28749c}{00037}}\ \ \ \ \ public\ ResponseEntity<?>\ registerUser(@RequestBody\ User\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{register}}(user);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00041}00041\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/users/login"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00042}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a322c33204ed49be9b0bb40b631617cbd}{00042}}\ \ \ \ \ public\ ResponseEntity<?>\ loginUser(@RequestBody\ User\ user,\ HttpSession\ session)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{login}}(user,\ session);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ Check\ user\ session}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00049}00049\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/users/session"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00050}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a4a645d7fe45ceafde34ab51b0eeb6e03}{00050}}\ \ \ \ \ public\ ResponseEntity<?>\ getUserSession(HttpSession\ session)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b}{checkSession}}(session);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00055}00055\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/books"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00056}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a9d882b27265b8d91e12bdf05eeec35a6}{00056}}\ \ \ \ \ public\ ResponseEntity<List<Book>>\ getBooks()\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ List<Book>\ books\ =\ bookController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798}{getAllBooks}}();\ \textcolor{comment}{//\ Get\ the\ list\ of\ books}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(books);\ \textcolor{comment}{//\ Wrap\ it\ in\ ResponseEntity\ and\ return}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Add\ a\ new\ book}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00063}00063\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/books"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00064}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0790fc9e1c05c3bb427e123e7ffdd8b8}{00064}}\ \ \ \ \ public\ ResponseEntity<Book>\ addBook(@RequestBody\ Book\ book)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Adding\ book:\ "{}}\ +\ book.getAuthor()\ +\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ +\ book.getTitle());}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3}{createBook}}(book);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00069}00069\ \ \ \ \ \textcolor{comment}{//\ Borrow\ a\ book}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00070}00070\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/books/borrow/\{bookId\}/users/\{userId\}"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00071}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0df34755dca2fc96877cef75a467d0ec}{00071}}\ \ \ \ \ public\ ResponseEntity<String>\ borrowBook(@PathVariable\ Long\ bookId,\ @PathVariable\ Long\ userId)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borrowingController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089}{borrowBook}}(bookId,\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{getUserById}}(userId).getBody());}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//\ Return\ a\ book}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00076}00076\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/books/return/\{bookId\}"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00077}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a8bfb97a1a9971b14b32a460facb44791}{00077}}\ \ \ \ \ public\ ResponseEntity<String>\ returnBook(@PathVariable\ Long\ bookId)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borrowingController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ae3f100651888f133d972b211e1271349}{returnBook}}(bookId);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ View\ user\ profile\ and\ borrowed\ books}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00082}00082\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/users/\{userId\}"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00083}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ad308827db70dc664809c68d433b84535}{00083}}\ \ \ \ \ public\ ResponseEntity<User>\ getUserProfile(@PathVariable\ Long\ userId)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{getUserById}}(userId);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ View\ user\ profile\ and\ borrowed\ books}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00088}00088\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/users/byname/\{username\}"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00089}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ac8fcad431e5e14c715ceb851cfae66a4}{00089}}\ \ \ \ \ public\ ResponseEntity<User>\ getUserProfileByUsername(@PathVariable\ String\ username)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{getUserByUsername}}(username);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00093}00093\ \ \ \ \ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00094}00094\ \textcolor{comment}{\ \ \ \ @GetMapping("{}/users/\{username\}/borrowed-\/books"{})}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00095}00095\ \textcolor{comment}{\ \ \ \ public\ ResponseEntity<List<Book>>\ getBorrowedBooksByUser(@PathVariable\ String\ username)\ \{}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ List<Book>\ borrowedBooks\ =\ borrowingController.getBorrowedBooksByUser(username);}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00097}00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ ResponseEntity.ok(borrowedBooks);}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00099}00099\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00101}00101\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/users/\{username\}/borrowed-\/books"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00102}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_aa5cc2311ed77b5858a808d973e04d5fe}{00102}}\ \ \ \ \ public\ ResponseEntity<List<Map<String,\ Object>>>\ getBorrowedBooksByUser(@PathVariable\ String\ username)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borrowingController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a29eafaeca2d4c24c2da783746536cc0a}{getBorrowedBooksByUser}}(username);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00106}00106\ \ \ \ \ @DeleteMapping(\textcolor{stringliteral}{"{}books/\{bookId\}/users/\{userId\}"{}})}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00107}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a5a862d8645af9cb0ee4b31ccf23f338e}{00107}}\ \ \ \ \ public\ ResponseEntity<Void>\ deleteBorrowing(@PathVariable\ Long\ bookId,\ @PathVariable\ Long\ userId)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ borrowingController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a7070ff2f46bfdbe3bdb9a0ea40246219}{deleteBorrowing}}(bookId,\ userId);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ bookController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825}{deleteBook}}(bookId);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ userController.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d}{deleteUser}}(userId);}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.noContent().build();}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_library_controller_8java_source_l00113}00113\ \}}
+
+\end{DoxyCode}

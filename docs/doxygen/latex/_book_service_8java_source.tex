@@ -1,0 +1,78 @@
+\doxysection{Book\+Service.\+java}
+\hypertarget{_book_service_8java_source}{}\label{_book_service_8java_source}\index{src/main/java/com/example/restapi/service/BookService.java@{src/main/java/com/example/restapi/service/BookService.java}}
+\mbox{\hyperlink{_book_service_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1example_1_1restapi_1_1service}{00001}}\ \textcolor{keyword}{package\ }com.example.restapi.service;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.example.restapi.model.User;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.example.restapi.repository.BookRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00006}00006\ \textcolor{keyword}{import}\ com.example.restapi.repository.UserRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.springframework.stereotype.Service;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00015}00015\ @Service}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00016}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service}{BookService}}\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00018}00018\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ BookRepository\ bookRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00022}00022\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ UserRepository\ userRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00030}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ac10621ceddc2e40d33855637eddd94c1}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ac10621ceddc2e40d33855637eddd94c1}{getAllBooks}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookRepository.findAll();}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00040}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ab6d33c8554eb7f8df1833d97d62ba102}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ Optional<Book>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ab6d33c8554eb7f8df1833d97d62ba102}{getBookById}}(Long\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookRepository.findById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00050}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ace0c7135d9cb8a478697e529bece9675}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ Book\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ace0c7135d9cb8a478697e529bece9675}{createBook}}(Book\ book)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Book\ Title:\ "{}}\ +\ book.getTitle()\ +\ \textcolor{stringliteral}{"{},\ Author:\ "{}}\ +\ book.getAuthor());}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookRepository.save(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00063}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a2c827897a7c7ecdbaea61000b8323515}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ Book\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a2c827897a7c7ecdbaea61000b8323515}{updateBook}}(Long\ \textcolor{keywordtype}{id},\ Book\ bookDetails)\ \textcolor{keywordflow}{throws}\ Exception\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookRepository.findById(\textcolor{keywordtype}{id}).map(book\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ book.setTitle(bookDetails.getTitle());}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ book.setAuthor(bookDetails.getAuthor());}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookRepository.save(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \}).orElseThrow(()\ -\/>\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Book\ not\ found"{}}));}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00070}00070\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00076}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ad6ddd29bd727751057a269184a713d09}{00076}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ad6ddd29bd727751057a269184a713d09}{deleteBook}}(Long\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ bookRepository.deleteById(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00080}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a3ddbde15bd87a64929da5c68211bacac}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a3ddbde15bd87a64929da5c68211bacac}{borrowBook}}(Long\ bookId,\ Long\ userId)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ Optional<Book>\ optionalBook\ =\ bookRepository.findById(bookId);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ Optional<User>\ optionalUser\ =\ userRepository.findById(userId);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (optionalBook.isPresent()\ \&\&\ optionalUser.isPresent())\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ Book\ book\ =\ optionalBook.get();}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (book.getBorrower()\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ book.setBorrower(optionalUser.get());}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bookRepository.save(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00093}00093\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00100}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a1d87ae30c4c73e339d5081905fe3e59a}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a1d87ae30c4c73e339d5081905fe3e59a}{returnBook}}(Long\ bookId)\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ Optional<Book>\ optionalBook\ =\ bookRepository.findById(bookId);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (optionalBook.isPresent())\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Book\ book\ =\ optionalBook.get();}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (book.getBorrower()\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ book.setBorrower(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bookRepository.save(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_8java_source_l00112}00112\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['deletebook_0',['deletebook',['../classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller.html#a485d7014e3fae2d219156ed16525a825',1,'com.example.restapi.controller.BookController.deleteBook()'],['../classcom_1_1example_1_1restapi_1_1service_1_1_book_service.html#ad6ddd29bd727751057a269184a713d09',1,'com.example.restapi.service.BookService.deleteBook()']]],
+  ['deleteborrowing_1',['deleteborrowing',['../classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller.html#a7070ff2f46bfdbe3bdb9a0ea40246219',1,'com.example.restapi.controller.BorrowingController.deleteBorrowing()'],['../classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller.html#a5a862d8645af9cb0ee4b31ccf23f338e',1,'com.example.restapi.controller.LibraryController.deleteBorrowing()']]],
+  ['deletebybookid_2',['deleteByBookId',['../interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html#a3812d7735e03a5e411afc9908a7a37b9',1,'com::example::restapi::repository::BorrowingRepository']]],
+  ['deletebybookuserid_3',['deleteByBookUserId',['../classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service.html#ab588b47b75d3cc0434594c534843d89b',1,'com::example::restapi::service::BorrowingService']]],
+  ['deleteuser_4',['deleteuser',['../classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller.html#a94d789efc92e15151eda4b8d6398c59d',1,'com.example.restapi.controller.UserController.deleteUser()'],['../classcom_1_1example_1_1restapi_1_1service_1_1_user_service.html#a4275e361f98915cdc306020910922667',1,'com.example.restapi.service.UserService.deleteUser()']]]
+];

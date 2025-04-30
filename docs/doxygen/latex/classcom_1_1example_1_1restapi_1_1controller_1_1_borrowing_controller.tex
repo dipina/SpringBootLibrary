@@ -1,0 +1,121 @@
+\doxysection{com.\+example.\+restapi.\+controller.\+Borrowing\+Controller Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}\index{com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}}
+
+
+Controller class providing RESTful endpoints for borrowing and returning books.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Response\+Entity$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089}{borrow\+Book}} (@Path\+Variable Long book\+Id, @Request\+Body User user)
+\item 
+Response\+Entity$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ae3f100651888f133d972b211e1271349}{return\+Book}} (@Path\+Variable Long book\+Id)
+\item 
+Response\+Entity$<$ List$<$ Map$<$ String, Object $>$ $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a29eafaeca2d4c24c2da783746536cc0a}{get\+Borrowed\+Books\+By\+User}} (@Path\+Variable String username)
+\item 
+Response\+Entity$<$ Void $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a7070ff2f46bfdbe3bdb9a0ea40246219}{delete\+Borrowing}} (@Path\+Variable Long book\+Id, @Path\+Variable Long user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controller class providing RESTful endpoints for borrowing and returning books. 
+
+This controller interacts with the {\ttfamily \doxylink{}{Borrowing\+Service}} and {\ttfamily \doxylink{}{User\+Service}} classes, managing book borrowing actions and retrieval of borrowed book data.
+
+The controller is hidden from Swagger documentation via the {\ttfamily \doxylink{}{Hidden}} annotation. 
+
+Definition at line \mbox{\hyperlink{_borrowing_controller_8java_source_l00037}{37}} of file \mbox{\hyperlink{_borrowing_controller_8java_source}{Borrowing\+Controller.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089} 
+\index{com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}!borrowBook@{borrowBook}}
+\index{borrowBook@{borrowBook}!com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}}
+\doxysubsubsection{\texorpdfstring{borrowBook()}{borrowBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ String $>$ com.\+example.\+restapi.\+controller.\+Borrowing\+Controller.\+borrow\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id,  }\item[{@Request\+Body User}]{user }\end{DoxyParamCaption})}
+
+Endpoint for borrowing a book by a specific user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book\+Id} & the ID of the book to borrow \\
+\hline
+{\em user} & the {\ttfamily \doxylink{}{User}} attempting to borrow the book \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Response\+Entity}} with a success or failure message 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_controller_8java_source_l00054}{54}} of file \mbox{\hyperlink{_borrowing_controller_8java_source}{Borrowing\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a7070ff2f46bfdbe3bdb9a0ea40246219}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a7070ff2f46bfdbe3bdb9a0ea40246219} 
+\index{com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}!deleteBorrowing@{deleteBorrowing}}
+\index{deleteBorrowing@{deleteBorrowing}!com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}}
+\doxysubsubsection{\texorpdfstring{deleteBorrowing()}{deleteBorrowing()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Void $>$ com.\+example.\+restapi.\+controller.\+Borrowing\+Controller.\+delete\+Borrowing (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id,  }\item[{@Path\+Variable Long}]{user\+Id }\end{DoxyParamCaption})}
+
+Endpoint for deleting a borrowing record based on book and user IDs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book\+Id} & the ID of the book \\
+\hline
+{\em user\+Id} & the ID of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Response\+Entity}} with no content if successful 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_controller_8java_source_l00106}{106}} of file \mbox{\hyperlink{_borrowing_controller_8java_source}{Borrowing\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a29eafaeca2d4c24c2da783746536cc0a}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a29eafaeca2d4c24c2da783746536cc0a} 
+\index{com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}!getBorrowedBooksByUser@{getBorrowedBooksByUser}}
+\index{getBorrowedBooksByUser@{getBorrowedBooksByUser}!com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}}
+\doxysubsubsection{\texorpdfstring{getBorrowedBooksByUser()}{getBorrowedBooksByUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$ List$<$ Map$<$ String, Object $>$ $>$ $>$ com.\+example.\+restapi.\+controller.\+Borrowing\+Controller.\+get\+Borrowed\+Books\+By\+User (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{username }\end{DoxyParamCaption})}
+
+Endpoint for retrieving the list of books borrowed by a specific user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & the username of the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Response\+Entity}} containing a list of borrowed books represented as maps of book attributes 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_controller_8java_source_l00093}{93}} of file \mbox{\hyperlink{_borrowing_controller_8java_source}{Borrowing\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ae3f100651888f133d972b211e1271349}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ae3f100651888f133d972b211e1271349} 
+\index{com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}!returnBook@{returnBook}}
+\index{returnBook@{returnBook}!com.example.restapi.controller.BorrowingController@{com.example.restapi.controller.BorrowingController}}
+\doxysubsubsection{\texorpdfstring{returnBook()}{returnBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ String $>$ com.\+example.\+restapi.\+controller.\+Borrowing\+Controller.\+return\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id }\end{DoxyParamCaption})}
+
+Endpoint for returning a borrowed book.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book\+Id} & the ID of the book to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a {\ttfamily \doxylink{}{Response\+Entity}} with a success or failure message 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_controller_8java_source_l00067}{67}} of file \mbox{\hyperlink{_borrowing_controller_8java_source}{Borrowing\+Controller.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/controller/\mbox{\hyperlink{_borrowing_controller_8java}{Borrowing\+Controller.\+java}}\end{DoxyCompactItemize}
