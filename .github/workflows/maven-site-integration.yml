@@ -47,13 +47,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
       - name: Wait for MySQL to be ready
         run: |
           echo "Waiting for MySQL..."
           until mysqladmin ping -h 127.0.0.1 -uroot -proot --silent; do
             sleep 2
           done
-
+        
       - name: Run DB initialization script
         run: |
           echo "Running DB setup..."
@@ -74,6 +77,14 @@ jobs:
       - name: Ensure that the performance reports are also moved into the target\site\reports folder
         run: mvn -Pperformance resources:copy-resources@copy-perf-report
       
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Convert README.md to index.html
+        run: |
+          mkdir -p docs
+          pandoc README.md -o docs/index.html
+
       - name: Copy site output to docs/site and docs/doxygen folder to docs/doxygen
         run: |
           mkdir -p docs
