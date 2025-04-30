@@ -59,6 +59,9 @@ jobs:
           echo "Running DB setup..."
           mysql -h 127.0.0.1 -uroot -proot < src/main/resources/dbsetup.sql
 
+      - name: Run Unit tests and converage tests
+        run: mvn test jacoco:report
+      
       - name: Run Integration Tests
         run: mvn -Pintegration integration-test
 
@@ -67,13 +70,19 @@ jobs:
 
       - name: Generate Maven Site
         run: mvn site
+
+      - name: Ensure that the performance reports are also moved into the target\site\reports folder
+        run: mvn -Pperformance resources:copy-resources@copy-perf-report
       
-      - name: Copy site output to docs/site folder
+      - name: Copy site output to docs/site and docs/doxygen folder to docs/doxygen
         run: |
           mkdir -p docs
           rm -rf docs/site
           mkdir -p docs/site
+          rm -rf docs/doxygen
+          mkdir -p docs/doxygen
           cp -r target/site/* docs/site/
+          cp -r target/doxygen/* docs/doxygen/
 
       - name: Commit and push docs
         run: |
