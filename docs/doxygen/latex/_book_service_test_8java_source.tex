@@ -1,0 +1,82 @@
+\doxysection{Book\+Service\+Test.\+java}
+\hypertarget{_book_service_test_8java_source}{}\label{_book_service_test_8java_source}\index{src/test/java/com/example/restapi/service/BookServiceTest.java@{src/test/java/com/example/restapi/service/BookServiceTest.java}}
+\mbox{\hyperlink{_book_service_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.restapi.service;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.mockito.ArgumentMatchers.any;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.mockito.Mockito.*;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00007}00007\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00008}00008\ \textcolor{keyword}{import}\ com.example.restapi.model.User;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00009}00009\ \textcolor{keyword}{import}\ com.example.restapi.repository.BookRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.example.restapi.repository.UserRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00011}00011\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00012}00012\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00013}00013\ \textcolor{keyword}{import}\ org.mockito.InjectMocks;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00014}00014\ \textcolor{keyword}{import}\ org.mockito.Mock;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00015}00015\ \textcolor{keyword}{import}\ org.mockito.MockitoAnnotations;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00017}00017\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00019}00019\ \textcolor{keyword}{class\ }BookServiceTest\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00021}00021\ \ \ \ \ @Mock}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ BookRepository\ bookRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00024}00024\ \ \ \ \ @Mock}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ UserRepository\ userRepository;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00027}00027\ \ \ \ \ @InjectMocks}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ BookService\ bookService;}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00030}00030\ \ \ \ \ @BeforeEach}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp()\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ MockitoAnnotations.openMocks(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00035}00035\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ testCreateBook()\ \{\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ Book\ book\ =\ \textcolor{keyword}{new}\ Book(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ \textcolor{stringliteral}{"{}anonymous"{}});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ when(bookRepository.save(any(Book.class))).thenReturn(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ Book\ createdBook\ =\ bookService.createBook(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ assertNotNull(createdBook);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ createdBook.getTitle());}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ assertTrue(createdBook.getBorrower()==\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00047}00047\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ testBorrowBook()\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ Book\ book\ =\ \textcolor{keyword}{new}\ Book(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ \textcolor{stringliteral}{"{}anonymous"{}});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ User\ user\ =\ \textcolor{keyword}{new}\ User(\textcolor{stringliteral}{"{}john"{}},\ \textcolor{stringliteral}{"{}pass"{}},\ \textcolor{stringliteral}{"{}John\ Doe"{}},\ \textcolor{stringliteral}{"{}john@email.org"{}});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ when(bookRepository.findById(1L)).thenReturn(Optional.of(book));}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ when(userRepository.findById(1L)).thenReturn(Optional.of(user));}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ when(bookRepository.save(any(Book.class))).thenReturn(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ success\ =\ bookService.borrowBook(1L,\ 1L);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ assertTrue(success);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ assertFalse(book.getBorrower()==\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00062}00062\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ testReturnBook()\ \{}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ Book\ book\ =\ \textcolor{keyword}{new}\ Book(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ \textcolor{stringliteral}{"{}anonymous"{}});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ User\ user\ =\ \textcolor{keyword}{new}\ User(\textcolor{stringliteral}{"{}john"{}},\ \textcolor{stringliteral}{"{}pass"{}},\ \textcolor{stringliteral}{"{}John\ Doe"{}},\ \textcolor{stringliteral}{"{}john@email.org"{}});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ book.setBorrower(user);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ when(bookRepository.findById(1L)).thenReturn(Optional.of(book));}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ when(bookRepository.save(any(Book.class))).thenReturn(book);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}\ success\ =\ bookService.returnBook(1L);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ assertTrue(success);}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ assertTrue(book.getBorrower()==\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_book_service_test_8java_source_l00076}00076\ \}}
+
+\end{DoxyCode}

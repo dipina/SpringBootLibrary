@@ -1,0 +1,74 @@
+\doxysection{Borrowing\+Controller.\+java}
+\hypertarget{_borrowing_controller_8java_source}{}\label{_borrowing_controller_8java_source}\index{src/main/java/com/example/restapi/controller/BorrowingController.java@{src/main/java/com/example/restapi/controller/BorrowingController.java}}
+\mbox{\hyperlink{_borrowing_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00007}00007\ \textcolor{keyword}{package\ }com.example.restapi.controller;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00009}00009\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00010}00010\ \textcolor{keyword}{import}\ com.example.restapi.model.User;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00011}00011\ \textcolor{keyword}{import}\ com.example.restapi.service.BorrowingService;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.example.restapi.service.UserService;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00014}00014\ \textcolor{keyword}{import}\ io.swagger.v3.oas.annotations.Hidden;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00015}00015\ \textcolor{keyword}{import}\ io.swagger.v3.oas.annotations.Hidden;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00017}00017\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00018}00018\ \textcolor{keyword}{import}\ java.util.Map;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00019}00019\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00021}00021\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00022}00022\ \textcolor{keyword}{import}\ org.springframework.http.ResponseEntity;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00023}00023\ \textcolor{keyword}{import}\ org.springframework.web.bind.annotation.*;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00034}00034\ @RestController}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00035}00035\ @RequestMapping(\textcolor{stringliteral}{"{}/api/borrows"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00036}00036\ \textcolor{comment}{//@Hidden\ \ //\ This\ will\ hide\ the\ entire\ BorrowingController\ from\ Swagger}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00037}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{00037}}\ public\ class\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{BorrowingController}}\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00039}00039\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ BorrowingService\ borrowingService;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00041}00041\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00043}00043\ \ \ \ \ @Autowired}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{private}\ UserService\ userService;}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00053}00053\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/\{bookId\}/borrows"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00054}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089}{00054}}\ \ \ \ \ public\ ResponseEntity<String>\ borrowBook(@PathVariable\ Long\ bookId,\ @RequestBody\ User\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borrowingService.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ad4c562c6caf1f03a850d56bced145089}{borrowBook}}(bookId,\ user)\ ?}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ ResponseEntity.ok(\textcolor{stringliteral}{"{}Book\ borrowed\ successfully"{}})\ :}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ ResponseEntity.badRequest().body(\textcolor{stringliteral}{"{}Book\ is\ already\ borrowed"{}});}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00066}00066\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/\{bookId\}/returns"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00067}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_ae3f100651888f133d972b211e1271349}{00067}}\ \ \ \ \ public\ ResponseEntity<String>\ returnBook(@PathVariable\ Long\ bookId)\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ borrowingService.returnBook(bookId)\ ?}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ ResponseEntity.ok(\textcolor{stringliteral}{"{}Book\ returned\ successfully"{}})\ :}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ ResponseEntity.badRequest().body(\textcolor{stringliteral}{"{}Book\ was\ not\ borrowed"{}});}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00073}00073\ \ \ \ \ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00074}00074\ \textcolor{comment}{\ \ \ \ @GetMapping("{}/users/\{username\}/borrowed-\/books"{})}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00075}00075\ \textcolor{comment}{\ \ \ \ public\ List<Book>\ getBorrowedBooksByUser(@PathVariable\ String\ username)\ \{}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ Optional<User>\ userOptional\ =\ userService.findByUsername(username);\ //\ Already\ returns\ Optional<User>}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00077}00077\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (userOptional.isEmpty())\ \{}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00079}00079\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ List.of();\ //\ Return\ empty\ list\ if\ user\ is\ not\ found}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00080}00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00081}00081\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00082}00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ borrowingService.getBorrowedBooksByUser(username);}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00083}00083\ \textcolor{comment}{\ \ \ \ \}\ */}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00092}00092\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/users/\{username\}/borrowed-\/books"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00093}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a29eafaeca2d4c24c2da783746536cc0a}{00093}}\ \ \ \ \ public\ ResponseEntity<List<Map<String,\ Object>>>\ getBorrowedBooksByUser(@PathVariable\ String\ username)\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ List<Map<String,\ Object>>\ borrowedBooks\ =\ borrowingService.getBorrowedBooksByUser(username);}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(borrowedBooks);}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00105}00105\ \ \ \ \ @DeleteMapping(\textcolor{stringliteral}{"{}/\{id\}"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00106}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller_a7070ff2f46bfdbe3bdb9a0ea40246219}{00106}}\ \ \ \ \ public\ ResponseEntity<Void>\ deleteBorrowing(@PathVariable\ Long\ bookId,\ @PathVariable\ Long\ userId)\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ borrowingService.deleteByBookUserId(bookId,\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.noContent().build();}
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00109}00109\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_borrowing_controller_8java_source_l00110}00110\ \}}
+
+\end{DoxyCode}

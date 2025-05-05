@@ -1,0 +1,18 @@
+\doxysection{User\+Repository.\+java}
+\hypertarget{_user_repository_8java_source}{}\label{_user_repository_8java_source}\index{src/main/java/com/example/restapi/repository/UserRepository.java@{src/main/java/com/example/restapi/repository/UserRepository.java}}
+\mbox{\hyperlink{_user_repository_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.restapi.repository;}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.springframework.data.jpa.repository.JpaRepository;}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00004}00004\ \textcolor{keyword}{import}\ org.springframework.stereotype.Repository;}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00005}00005\ \textcolor{keyword}{import}\ com.example.restapi.model.User;}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00008}00008\ @Repository}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00009}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository}{UserRepository}}\ \textcolor{keyword}{extends}\ JpaRepository<User,\ Long>\ \{}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00010}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository_a773e262493f9e5c1e689141bd9053d72}{00010}}\ \ \ \ \ Optional<User>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository_a773e262493f9e5c1e689141bd9053d72}{findByUsername}}(String\ username);}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00011}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository_aa9bef9b203bdb51cc48712099fef1af8}{00011}}\ \ \ \ \ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository_aa9bef9b203bdb51cc48712099fef1af8}{existsByUsername}}(String\ username);}
+\DoxyCodeLine{\Hypertarget{_user_repository_8java_source_l00012}00012\ \}}
+
+\end{DoxyCode}
