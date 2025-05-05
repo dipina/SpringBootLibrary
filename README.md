@@ -243,3 +243,4 @@ If you've changed the Dockerfile, dependencies, or environment configurations.
 docker-compose up --build	
 ```
 
+Further documentation available at [docker_essentials.md](docker_essentials_with_compose.md) document 
