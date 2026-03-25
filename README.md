@@ -99,7 +99,7 @@ Then, open `target/site/index.html`, and the performance report should be availa
 
 ## Profiling with VisualVM
 
-In order to allow VisualVM to connect to the application, *sprin-boot-maven-plugin* needs to be configured with the following parameters:
+In order to allow VisualVM to connect to the application, *spring-boot-maven-plugin* needs to be configured with the following parameters:
 ```xml
    <plugin>
       <groupId>org.springframework.boot</groupId>
