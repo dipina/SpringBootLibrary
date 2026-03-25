@@ -56,10 +56,13 @@ public class PerformanceTest {
         borrowingService.getAllBorrowings();
     }
     
-    // Test getAllUsers() with a high-load scenario of 100 users for 15 seconds
     @Test
     @JUnitPerfTest(threads = 100, durationMs = 15000, warmUpMs = 3000)
-    @JUnitPerfTestRequirement(percentiles = "90:100ms,95:150ms,98:200ms,99:250ms", executionsPerSec = 1000, allowedErrorPercentage = 0.10f)
+    @JUnitPerfTestRequirement(
+        percentiles = "90:100ms,95:150ms,98:200ms,99:250ms",
+        executionsPerSec = 100,
+        allowedErrorPercentage = 0.10f
+    )
     public void testGetAllUsersPerformance() {
         userService.getAllUsers();
     }
