@@ -1,0 +1,167 @@
+\doxysection{com.\+example.\+restapi.\+controller.\+Library\+Controller Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller}{}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller}\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_afe2aabdab29cd33b4945414311afb29c}{Library\+Controller}} (\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{User\+Controller}} user\+Controller, \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{Book\+Controller}} book\+Controller, \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{Borrowing\+Controller}} borrowing\+Controller)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0262876ba24d168df3bea12dcf28749c}{register\+User}} (@Request\+Body User user)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a322c33204ed49be9b0bb40b631617cbd}{login\+User}} (@Request\+Body User user, Http\+Session session)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a4a645d7fe45ceafde34ab51b0eeb6e03}{get\+User\+Session}} (Http\+Session session)
+\item 
+Response\+Entity$<$ List$<$ Book $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a9d882b27265b8d91e12bdf05eeec35a6}{get\+Books}} ()
+\item 
+Response\+Entity$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0790fc9e1c05c3bb427e123e7ffdd8b8}{add\+Book}} (@Request\+Body Book book)
+\item 
+Response\+Entity$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0df34755dca2fc96877cef75a467d0ec}{borrow\+Book}} (@Path\+Variable Long book\+Id, @Path\+Variable Long user\+Id)
+\item 
+Response\+Entity$<$ String $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a8bfb97a1a9971b14b32a460facb44791}{return\+Book}} (@Path\+Variable Long book\+Id)
+\item 
+Response\+Entity$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ad308827db70dc664809c68d433b84535}{get\+User\+Profile}} (@Path\+Variable Long user\+Id)
+\item 
+Response\+Entity$<$ User $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ac8fcad431e5e14c715ceb851cfae66a4}{get\+User\+Profile\+By\+Username}} (@Path\+Variable String username)
+\item 
+Response\+Entity$<$ List$<$ Map$<$ String, Object $>$ $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_aa5cc2311ed77b5858a808d973e04d5fe}{get\+Borrowed\+Books\+By\+User}} (@Path\+Variable String username)
+\item 
+Response\+Entity$<$ Void $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a5a862d8645af9cb0ee4b31ccf23f338e}{delete\+Borrowing}} (@Path\+Variable Long book\+Id, @Path\+Variable Long user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00020}{20}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_afe2aabdab29cd33b4945414311afb29c}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_afe2aabdab29cd33b4945414311afb29c} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!LibraryController@{LibraryController}}
+\index{LibraryController@{LibraryController}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{LibraryController()}{LibraryController()}}
+{\footnotesize\ttfamily com.\+example.\+restapi.\+controller.\+Library\+Controller.\+Library\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{User\+Controller}}}]{user\+Controller,  }\item[{\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{Book\+Controller}}}]{book\+Controller,  }\item[{\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_borrowing_controller}{Borrowing\+Controller}}}]{borrowing\+Controller }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00027}{27}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0790fc9e1c05c3bb427e123e7ffdd8b8}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0790fc9e1c05c3bb427e123e7ffdd8b8} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!addBook@{addBook}}
+\index{addBook@{addBook}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{addBook()}{addBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Book $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+add\+Book (\begin{DoxyParamCaption}\item[{@Request\+Body Book}]{book }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00064}{64}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0df34755dca2fc96877cef75a467d0ec}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0df34755dca2fc96877cef75a467d0ec} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!borrowBook@{borrowBook}}
+\index{borrowBook@{borrowBook}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{borrowBook()}{borrowBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ String $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+borrow\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id,  }\item[{@Path\+Variable Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00071}{71}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a5a862d8645af9cb0ee4b31ccf23f338e}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a5a862d8645af9cb0ee4b31ccf23f338e} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!deleteBorrowing@{deleteBorrowing}}
+\index{deleteBorrowing@{deleteBorrowing}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{deleteBorrowing()}{deleteBorrowing()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Void $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+delete\+Borrowing (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id,  }\item[{@Path\+Variable Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00107}{107}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a9d882b27265b8d91e12bdf05eeec35a6}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a9d882b27265b8d91e12bdf05eeec35a6} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!getBooks@{getBooks}}
+\index{getBooks@{getBooks}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{getBooks()}{getBooks()}}
+{\footnotesize\ttfamily Response\+Entity$<$ List$<$ Book $>$ $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+get\+Books (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00056}{56}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_aa5cc2311ed77b5858a808d973e04d5fe}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_aa5cc2311ed77b5858a808d973e04d5fe} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!getBorrowedBooksByUser@{getBorrowedBooksByUser}}
+\index{getBorrowedBooksByUser@{getBorrowedBooksByUser}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{getBorrowedBooksByUser()}{getBorrowedBooksByUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$ List$<$ Map$<$ String, Object $>$ $>$ $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+get\+Borrowed\+Books\+By\+User (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00102}{102}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ad308827db70dc664809c68d433b84535}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ad308827db70dc664809c68d433b84535} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!getUserProfile@{getUserProfile}}
+\index{getUserProfile@{getUserProfile}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{getUserProfile()}{getUserProfile()}}
+{\footnotesize\ttfamily Response\+Entity$<$ User $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+get\+User\+Profile (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00083}{83}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ac8fcad431e5e14c715ceb851cfae66a4}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_ac8fcad431e5e14c715ceb851cfae66a4} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!getUserProfileByUsername@{getUserProfileByUsername}}
+\index{getUserProfileByUsername@{getUserProfileByUsername}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{getUserProfileByUsername()}{getUserProfileByUsername()}}
+{\footnotesize\ttfamily Response\+Entity$<$ User $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+get\+User\+Profile\+By\+Username (\begin{DoxyParamCaption}\item[{@Path\+Variable String}]{username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00089}{89}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a4a645d7fe45ceafde34ab51b0eeb6e03}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a4a645d7fe45ceafde34ab51b0eeb6e03} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!getUserSession@{getUserSession}}
+\index{getUserSession@{getUserSession}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{getUserSession()}{getUserSession()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+get\+User\+Session (\begin{DoxyParamCaption}\item[{Http\+Session}]{session }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00050}{50}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a322c33204ed49be9b0bb40b631617cbd}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a322c33204ed49be9b0bb40b631617cbd} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!loginUser@{loginUser}}
+\index{loginUser@{loginUser}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{loginUser()}{loginUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+login\+User (\begin{DoxyParamCaption}\item[{@Request\+Body User}]{user,  }\item[{Http\+Session}]{session }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00042}{42}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0262876ba24d168df3bea12dcf28749c}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a0262876ba24d168df3bea12dcf28749c} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+register\+User (\begin{DoxyParamCaption}\item[{@Request\+Body User}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00037}{37}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a8bfb97a1a9971b14b32a460facb44791}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_library_controller_a8bfb97a1a9971b14b32a460facb44791} 
+\index{com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}!returnBook@{returnBook}}
+\index{returnBook@{returnBook}!com.example.restapi.controller.LibraryController@{com.example.restapi.controller.LibraryController}}
+\doxysubsubsection{\texorpdfstring{returnBook()}{returnBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ String $>$ com.\+example.\+restapi.\+controller.\+Library\+Controller.\+return\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{book\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_library_controller_8java_source_l00077}{77}} of file \mbox{\hyperlink{_library_controller_8java_source}{Library\+Controller.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/controller/\mbox{\hyperlink{_library_controller_8java}{Library\+Controller.\+java}}\end{DoxyCompactItemize}

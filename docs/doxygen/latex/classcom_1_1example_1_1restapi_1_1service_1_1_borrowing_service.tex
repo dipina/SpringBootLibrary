@@ -1,0 +1,104 @@
+\doxysection{com.\+example.\+restapi.\+service.\+Borrowing\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service}{}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service}\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a02a2f1c66d30b516e3875b56ada09d80}{get\+All\+Borrowings}} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a2d02b0c6b936acd3195aa4195e1ff907}{borrow\+Book}} (Long book\+Id, User user)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0ff85984560e51b56df454b81a6484af}{return\+Book}} (Long book\+Id)
+\item 
+List$<$ Map$<$ String, Object $>$ $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a76e389070f1ff28a6100c3b791d87bcc}{get\+Borrowed\+Books\+By\+User}} (String username)
+\item 
+Optional$<$ Borrowing $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ae1922483512c9d16632013101ceb0485}{get\+Borrowing\+Details}} (Long book\+Id, Long user\+Id)
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0413979e557cc5e8fa8fe6c38827210c}{get\+Borrowings\+Details}} (Long book\+Id, Long user\+Id)
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ab588b47b75d3cc0434594c534843d89b}{delete\+By\+Book\+User\+Id}} (Long book\+Id, Long user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00022}{22}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a2d02b0c6b936acd3195aa4195e1ff907}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a2d02b0c6b936acd3195aa4195e1ff907} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!borrowBook@{borrowBook}}
+\index{borrowBook@{borrowBook}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{borrowBook()}{borrowBook()}}
+{\footnotesize\ttfamily boolean com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+borrow\+Book (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{User}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00035}{35}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ab588b47b75d3cc0434594c534843d89b}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ab588b47b75d3cc0434594c534843d89b} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!deleteByBookUserId@{deleteByBookUserId}}
+\index{deleteByBookUserId@{deleteByBookUserId}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{deleteByBookUserId()}{deleteByBookUserId()}}
+{\footnotesize\ttfamily void com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+delete\+By\+Book\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00125}{125}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a02a2f1c66d30b516e3875b56ada09d80}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a02a2f1c66d30b516e3875b56ada09d80} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!getAllBorrowings@{getAllBorrowings}}
+\index{getAllBorrowings@{getAllBorrowings}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{getAllBorrowings()}{getAllBorrowings()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+get\+All\+Borrowings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00031}{31}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a76e389070f1ff28a6100c3b791d87bcc}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a76e389070f1ff28a6100c3b791d87bcc} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!getBorrowedBooksByUser@{getBorrowedBooksByUser}}
+\index{getBorrowedBooksByUser@{getBorrowedBooksByUser}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{getBorrowedBooksByUser()}{getBorrowedBooksByUser()}}
+{\footnotesize\ttfamily List$<$ Map$<$ String, Object $>$ $>$ com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+get\+Borrowed\+Books\+By\+User (\begin{DoxyParamCaption}\item[{String}]{username }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00083}{83}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ae1922483512c9d16632013101ceb0485}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_ae1922483512c9d16632013101ceb0485} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!getBorrowingDetails@{getBorrowingDetails}}
+\index{getBorrowingDetails@{getBorrowingDetails}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{getBorrowingDetails()}{getBorrowingDetails()}}
+{\footnotesize\ttfamily Optional$<$ Borrowing $>$ com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+get\+Borrowing\+Details (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00113}{113}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0413979e557cc5e8fa8fe6c38827210c}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0413979e557cc5e8fa8fe6c38827210c} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!getBorrowingsDetails@{getBorrowingsDetails}}
+\index{getBorrowingsDetails@{getBorrowingsDetails}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{getBorrowingsDetails()}{getBorrowingsDetails()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+get\+Borrowings\+Details (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00118}{118}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0ff85984560e51b56df454b81a6484af}\label{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service_a0ff85984560e51b56df454b81a6484af} 
+\index{com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}!returnBook@{returnBook}}
+\index{returnBook@{returnBook}!com.example.restapi.service.BorrowingService@{com.example.restapi.service.BorrowingService}}
+\doxysubsubsection{\texorpdfstring{returnBook()}{returnBook()}}
+{\footnotesize\ttfamily boolean com.\+example.\+restapi.\+service.\+Borrowing\+Service.\+return\+Book (\begin{DoxyParamCaption}\item[{Long}]{book\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_borrowing_service_8java_source_l00050}{50}} of file \mbox{\hyperlink{_borrowing_service_8java_source}{Borrowing\+Service.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/service/\mbox{\hyperlink{_borrowing_service_8java}{Borrowing\+Service.\+java}}\end{DoxyCompactItemize}

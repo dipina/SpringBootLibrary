@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BorrowingController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.controller</a> &gt; <span class="el_source">BorrowingController.java</span></div><h1>BorrowingController.java</h1><pre class="source lang-java linenums">/**
+ * @package com.example.restapi.controller
+ * @brief This package contains REST controllers for handling user, book, and borrowing operations.
+ *
+ * This package includes the classes {@link BookController}, {@link UserController}, and {@link BorrowingController}.
+ */
+package com.example.restapi.controller;
+
+import com.example.restapi.model.Book;
+import com.example.restapi.model.User;
+import com.example.restapi.service.BorrowingService;
+import com.example.restapi.service.UserService;
+
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Hidden;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * @class BorrowingController
+ * @brief Controller class providing RESTful endpoints for borrowing and returning books.
+ *
+ * This controller interacts with the {@link BorrowingService} and {@link UserService} classes,
+ * managing book borrowing actions and retrieval of borrowed book data.
+ *
+ * The controller is hidden from Swagger documentation via the {@link Hidden} annotation.
+ */
+@RestController
+@RequestMapping(&quot;/api/borrows&quot;)
+//@Hidden  // This will hide the entire BorrowingController from Swagger
+<span class="fc" id="L37">public class BorrowingController {</span>
+    /** Service handling borrowing logic. */
+    @Autowired
+    private BorrowingService borrowingService;
+    
+    /** Service handling user management logic. */
+    @Autowired
+    private UserService userService;
+
+    /**
+     * Endpoint for borrowing a book by a specific user.
+     *
+     * @param bookId the ID of the book to borrow
+     * @param user the {@link User} attempting to borrow the book
+     * @return a {@link ResponseEntity} with a success or failure message
+     */
+    @PostMapping(&quot;/{bookId}/borrows&quot;)
+    public ResponseEntity&lt;String&gt; borrowBook(@PathVariable Long bookId, @RequestBody User user) {
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        return borrowingService.borrowBook(bookId, user) ?</span>
+<span class="fc" id="L56">            ResponseEntity.ok(&quot;Book borrowed successfully&quot;) :</span>
+<span class="nc" id="L57">            ResponseEntity.badRequest().body(&quot;Book is already borrowed&quot;);</span>
+    }
+
+    /**
+     * Endpoint for returning a borrowed book.
+     *
+     * @param bookId the ID of the book to return
+     * @return a {@link ResponseEntity} with a success or failure message
+     */
+    @PostMapping(&quot;/{bookId}/returns&quot;)
+    public ResponseEntity&lt;String&gt; returnBook(@PathVariable Long bookId) {
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        return borrowingService.returnBook(bookId) ?</span>
+<span class="fc" id="L69">            ResponseEntity.ok(&quot;Book returned successfully&quot;) :</span>
+<span class="nc" id="L70">            ResponseEntity.badRequest().body(&quot;Book was not borrowed&quot;);</span>
+    }
+
+    /* 
+    @GetMapping(&quot;/users/{username}/borrowed-books&quot;)
+    public List&lt;Book&gt; getBorrowedBooksByUser(@PathVariable String username) {
+        Optional&lt;User&gt; userOptional = userService.findByUsername(username); // Already returns Optional&lt;User&gt;
+
+        if (userOptional.isEmpty()) {
+            return List.of(); // Return empty list if user is not found
+        }
+
+        return borrowingService.getBorrowedBooksByUser(username);
+    } */
+
+
+    /**
+     * Endpoint for retrieving the list of books borrowed by a specific user.
+     *
+     * @param username the username of the user
+     * @return a {@link ResponseEntity} containing a list of borrowed books represented as maps of book attributes
+     */
+    @GetMapping(&quot;/users/{username}/borrowed-books&quot;)
+    public ResponseEntity&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; getBorrowedBooksByUser(@PathVariable String username) {
+<span class="nc" id="L94">        List&lt;Map&lt;String, Object&gt;&gt; borrowedBooks = borrowingService.getBorrowedBooksByUser(username);</span>
+<span class="nc" id="L95">        return ResponseEntity.ok(borrowedBooks);</span>
+    }
+
+    /**
+     * Endpoint for deleting a borrowing record based on book and user IDs.
+     *
+     * @param bookId the ID of the book
+     * @param userId the ID of the user
+     * @return a {@link ResponseEntity} with no content if successful
+     */
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteBorrowing(@PathVariable Long bookId, @PathVariable Long userId) {
+<span class="fc" id="L107">        borrowingService.deleteByBookUserId(bookId, userId);</span>
+<span class="fc" id="L108">        return ResponseEntity.noContent().build();</span>
+    }    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

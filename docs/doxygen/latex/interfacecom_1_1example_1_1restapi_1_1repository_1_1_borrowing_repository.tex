@@ -1,0 +1,114 @@
+\doxysection{com.\+example.\+restapi.\+repository.\+Borrowing\+Repository Interface Reference}
+\hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository}{}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository}\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+Inheritance diagram for com.\+example.\+restapi.\+repository.\+Borrowing\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad02dffcc224f81a9d0de059d261340a9}{find\+By\+User\+Id}} (Long user\+Id)
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0a5d7745ede3389bf3db4234c1008f85}{find\+By\+Book\+Id}} (Long book\+Id)
+\item 
+void \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a3812d7735e03a5e411afc9908a7a37b9}{delete\+By\+Book\+Id}} (Long book\+Id)
+\item 
+Borrowing \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a5a7b3563fcb3826153e4a63656e0b090}{find\+Latest\+Borrowing}} (Long book\+Id, Long user\+Id)
+\item 
+List$<$ Book $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0041700cb7b137f8ff8fda905da731b6}{find\+Books\+By\+User\+Id}} (Long user\+Id)
+\item 
+List$<$ Book $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_abf82a32e61062e4964ac690416e6e180}{find\+Books\+Borrowed\+By\+User\+Id}} (Long user\+Id)
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a65e93501d1ad0dfaa63fc87a8b9a10cf}{find\+Borrowings\+By\+Book\+Id\+And\+User\+Id}} (Long book\+Id, Long user\+Id)
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_aea6b0f3192e1ab446a1a131fc731e333}{find\+Active\+Borrowings\+By\+Book\+Id\+And\+User\+Id}} (Long book\+Id, Long user\+Id)
+\item 
+Optional$<$ List$<$ Borrowing $>$ $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ae95ea58888e07079e6c68cd6065eb2dc}{find\+Active\+Borrowing\+By\+Book\+Id\+And\+User\+Id}} (Long book\+Id, Long user\+Id)
+\item 
+Optional$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a8e18b866d1347fe9431609b1818d2be7}{find\+Latest\+Borrowed\+Book}} (Long book\+Id, Long user\+Id)
+\item 
+List$<$ Borrowing $>$ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad1322efaf106fb480504860ccab71093}{find\+Active\+Borrowings\+By\+Book\+Id}} (Long book\+Id, Long user\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_repository_8java_source_l00014}{14}} of file \mbox{\hyperlink{_borrowing_repository_8java_source}{Borrowing\+Repository.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a3812d7735e03a5e411afc9908a7a37b9}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a3812d7735e03a5e411afc9908a7a37b9} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!deleteByBookId@{deleteByBookId}}
+\index{deleteByBookId@{deleteByBookId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{deleteByBookId()}{deleteByBookId()}}
+{\footnotesize\ttfamily void com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+delete\+By\+Book\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ae95ea58888e07079e6c68cd6065eb2dc}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ae95ea58888e07079e6c68cd6065eb2dc} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findActiveBorrowingByBookIdAndUserId@{findActiveBorrowingByBookIdAndUserId}}
+\index{findActiveBorrowingByBookIdAndUserId@{findActiveBorrowingByBookIdAndUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findActiveBorrowingByBookIdAndUserId()}{findActiveBorrowingByBookIdAndUserId()}}
+{\footnotesize\ttfamily Optional$<$ List$<$ Borrowing $>$ $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Active\+Borrowing\+By\+Book\+Id\+And\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad1322efaf106fb480504860ccab71093}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad1322efaf106fb480504860ccab71093} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findActiveBorrowingsByBookId@{findActiveBorrowingsByBookId}}
+\index{findActiveBorrowingsByBookId@{findActiveBorrowingsByBookId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findActiveBorrowingsByBookId()}{findActiveBorrowingsByBookId()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Active\+Borrowings\+By\+Book\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_aea6b0f3192e1ab446a1a131fc731e333}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_aea6b0f3192e1ab446a1a131fc731e333} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findActiveBorrowingsByBookIdAndUserId@{findActiveBorrowingsByBookIdAndUserId}}
+\index{findActiveBorrowingsByBookIdAndUserId@{findActiveBorrowingsByBookIdAndUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findActiveBorrowingsByBookIdAndUserId()}{findActiveBorrowingsByBookIdAndUserId()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Active\+Borrowings\+By\+Book\+Id\+And\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_abf82a32e61062e4964ac690416e6e180}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_abf82a32e61062e4964ac690416e6e180} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findBooksBorrowedByUserId@{findBooksBorrowedByUserId}}
+\index{findBooksBorrowedByUserId@{findBooksBorrowedByUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findBooksBorrowedByUserId()}{findBooksBorrowedByUserId()}}
+{\footnotesize\ttfamily List$<$ Book $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Books\+Borrowed\+By\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0041700cb7b137f8ff8fda905da731b6}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0041700cb7b137f8ff8fda905da731b6} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findBooksByUserId@{findBooksByUserId}}
+\index{findBooksByUserId@{findBooksByUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findBooksByUserId()}{findBooksByUserId()}}
+{\footnotesize\ttfamily List$<$ Book $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Books\+By\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a65e93501d1ad0dfaa63fc87a8b9a10cf}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a65e93501d1ad0dfaa63fc87a8b9a10cf} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findBorrowingsByBookIdAndUserId@{findBorrowingsByBookIdAndUserId}}
+\index{findBorrowingsByBookIdAndUserId@{findBorrowingsByBookIdAndUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findBorrowingsByBookIdAndUserId()}{findBorrowingsByBookIdAndUserId()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Borrowings\+By\+Book\+Id\+And\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0a5d7745ede3389bf3db4234c1008f85}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0a5d7745ede3389bf3db4234c1008f85} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findByBookId@{findByBookId}}
+\index{findByBookId@{findByBookId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findByBookId()}{findByBookId()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+By\+Book\+Id (\begin{DoxyParamCaption}\item[{Long}]{book\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad02dffcc224f81a9d0de059d261340a9}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad02dffcc224f81a9d0de059d261340a9} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findByUserId@{findByUserId}}
+\index{findByUserId@{findByUserId}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findByUserId()}{findByUserId()}}
+{\footnotesize\ttfamily List$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+By\+User\+Id (\begin{DoxyParamCaption}\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a8e18b866d1347fe9431609b1818d2be7}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a8e18b866d1347fe9431609b1818d2be7} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findLatestBorrowedBook@{findLatestBorrowedBook}}
+\index{findLatestBorrowedBook@{findLatestBorrowedBook}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findLatestBorrowedBook()}{findLatestBorrowedBook()}}
+{\footnotesize\ttfamily Optional$<$ Borrowing $>$ com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Latest\+Borrowed\+Book (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+\Hypertarget{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a5a7b3563fcb3826153e4a63656e0b090}\label{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a5a7b3563fcb3826153e4a63656e0b090} 
+\index{com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}!findLatestBorrowing@{findLatestBorrowing}}
+\index{findLatestBorrowing@{findLatestBorrowing}!com.example.restapi.repository.BorrowingRepository@{com.example.restapi.repository.BorrowingRepository}}
+\doxysubsubsection{\texorpdfstring{findLatestBorrowing()}{findLatestBorrowing()}}
+{\footnotesize\ttfamily Borrowing com.\+example.\+restapi.\+repository.\+Borrowing\+Repository.\+find\+Latest\+Borrowing (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/repository/\mbox{\hyperlink{_borrowing_repository_8java}{Borrowing\+Repository.\+java}}\end{DoxyCompactItemize}

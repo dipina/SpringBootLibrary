@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Borrowing.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.model</a> &gt; <span class="el_source">Borrowing.java</span></div><h1>Borrowing.java</h1><pre class="source lang-java linenums">/**
+ * @file Borrowing.java
+ * @brief Entity class representing a borrowing transaction between a user and a book.
+ *
+ * @details
+ * The {@code Borrowing} class maps to the &quot;borrowings&quot; table in the database.
+ * It captures the user, book, borrow date, and optional return date for each borrowing event.
+ *
+ * @see User
+ * @see Book
+ *
+ * @author 
+ * Example Developer
+ * @version 1.0
+ * @since 2024-04-28
+ */
+package com.example.restapi.model;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+/**
+ * @class Borrowing
+ * @brief A JPA entity representing a borrowing record.
+ *
+ * This entity manages information regarding the borrowing and returning
+ * of a {@link Book} by a {@link User}.
+ */
+@Entity
+@Table(name = &quot;borrowings&quot;)
+public class Borrowing {
+    /**
+     * @brief Unique identifier for the borrowing record.
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+     /**
+     * @brief The user who borrows the book.
+     *
+     * @details
+     * This establishes a many-to-one relationship with the {@link User} entity.
+     */
+    @ManyToOne
+    @JoinColumn(name = &quot;user_id&quot;)
+    private User user;
+
+    /**
+     * @brief The book that is borrowed.
+     *
+     * @details
+     * This establishes a many-to-one relationship with the {@link Book} entity.
+     */
+    @ManyToOne
+    @JoinColumn(name = &quot;book_id&quot;)
+    private Book book;
+
+    /**
+     * @brief The date and time when the book was borrowed.
+     */
+    private LocalDateTime borrowDate;
+     /**
+     * @brief The date and time when the book was returned.
+     *
+     * @details
+     * This is {@code null} until the book is returned.
+     */
+    private LocalDateTime returnDate;
+
+    /**
+     * @brief Default constructor.
+     *
+     * @details
+     * Required by JPA for entity instantiation.
+     */
+<span class="fc" id="L77">    public Borrowing() {}</span>
+
+     /**
+     * @brief Constructor to create a new borrowing record.
+     *
+     * @param user the user borrowing the book
+     * @param book the book being borrowed
+     *
+     * @details
+     * The borrow date is initialized to the current time, and the return date is set to {@code null}.
+     */
+<span class="fc" id="L88">    public Borrowing(User user, Book book) {</span>
+<span class="fc" id="L89">        this.user = user;</span>
+<span class="fc" id="L90">        this.book = book;</span>
+<span class="fc" id="L91">        this.borrowDate = LocalDateTime.now();</span>
+<span class="fc" id="L92">        this.returnDate = null;</span>
+<span class="fc" id="L93">    }</span>
+
+    /**
+     * @brief Gets the unique identifier of the borrowing record.
+     *
+     * @return the borrowing record ID
+     */
+<span class="nc" id="L100">    public Long getId() { return id; }</span>
+
+    /**
+     * @brief Gets the user associated with this borrowing.
+     *
+     * @return the {@link User} who borrowed the book
+     */
+<span class="nc" id="L107">    public User getUser() { return user; }</span>
+
+    /**
+     * @brief Gets the book associated with this borrowing.
+     *
+     * @return the {@link Book} that was borrowed
+     */
+<span class="nc" id="L114">    public Book getBook() { return book; }</span>
+
+    /**
+     * @brief Gets the date and time when the book was borrowed.
+     *
+     * @return the borrow date and time
+     */
+<span class="nc" id="L121">    public LocalDateTime getBorrowDate() { return borrowDate; }</span>
+
+    /**
+     * @brief Gets the date and time when the book was returned.
+     *
+     * @return the return date and time, or {@code null} if not yet returned
+     */
+<span class="nc" id="L128">    public LocalDateTime getReturnDate() { return returnDate; }</span>
+
+    /**
+     * @brief Sets the date and time when the book was returned.
+     *
+     * @param returnDate the return date and time
+     */
+<span class="fc" id="L135">    public void setReturnDate(LocalDateTime returnDate) { this.returnDate = returnDate; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

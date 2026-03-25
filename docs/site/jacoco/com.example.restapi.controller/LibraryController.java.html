@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibraryController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.controller</a> &gt; <span class="el_source">LibraryController.java</span></div><h1>LibraryController.java</h1><pre class="source lang-java linenums">package com.example.restapi.controller;
+
+import com.example.restapi.model.Book;
+import com.example.restapi.model.User;
+
+import jakarta.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+@RestController
+@RequestMapping(&quot;/api/library&quot;)
+@Tag(name = &quot;Library API&quot;, description = &quot;Operations to manage a Library which correlates books and users information&quot;)
+public class LibraryController {
+
+    private final UserController userController;
+    private final BookController bookController;
+    private final BorrowingController borrowingController;
+
+    @Autowired
+    public LibraryController(UserController userController, 
+                             BookController bookController, 
+<span class="fc" id="L29">                             BorrowingController borrowingController) {</span>
+<span class="fc" id="L30">        this.userController = userController;</span>
+<span class="fc" id="L31">        this.bookController = bookController;</span>
+<span class="fc" id="L32">        this.borrowingController = borrowingController;</span>
+<span class="fc" id="L33">    }</span>
+
+    // User registration
+    @PostMapping(&quot;/users/register&quot;)
+    public ResponseEntity&lt;?&gt; registerUser(@RequestBody User user) {
+<span class="fc" id="L38">        return userController.register(user);</span>
+    }
+
+    @PostMapping(&quot;/users/login&quot;)
+    public ResponseEntity&lt;?&gt; loginUser(@RequestBody User user, HttpSession session) {
+<span class="nc" id="L43">        return userController.login(user, session);</span>
+    }
+    
+
+
+    // Check user session
+    @GetMapping(&quot;/users/session&quot;)
+    public ResponseEntity&lt;?&gt; getUserSession(HttpSession session) {
+<span class="nc" id="L51">        return userController.checkSession(session);</span>
+    }
+
+
+    @GetMapping(&quot;/books&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBooks() {
+<span class="fc" id="L57">        List&lt;Book&gt; books = bookController.getAllBooks(); // Get the list of books</span>
+<span class="fc" id="L58">        return ResponseEntity.ok(books); // Wrap it in ResponseEntity and return</span>
+    }
+
+
+    // Add a new book
+    @PostMapping(&quot;/books&quot;)
+    public ResponseEntity&lt;Book&gt; addBook(@RequestBody Book book) {
+<span class="fc" id="L65">        System.out.println(&quot;Adding book: &quot; + book.getAuthor() + &quot; - &quot; + book.getTitle());</span>
+<span class="fc" id="L66">        return bookController.createBook(book);</span>
+    }
+
+    // Borrow a book
+    @PostMapping(&quot;/books/borrow/{bookId}/users/{userId}&quot;)
+    public ResponseEntity&lt;String&gt; borrowBook(@PathVariable Long bookId, @PathVariable Long userId) {
+<span class="fc" id="L72">        return borrowingController.borrowBook(bookId, userController.getUserById(userId).getBody());</span>
+    }
+
+    // Return a book
+    @PostMapping(&quot;/books/return/{bookId}&quot;)
+    public ResponseEntity&lt;String&gt; returnBook(@PathVariable Long bookId) {
+<span class="fc" id="L78">        return borrowingController.returnBook(bookId);</span>
+    }
+
+    // View user profile and borrowed books
+    @GetMapping(&quot;/users/{userId}&quot;)
+    public ResponseEntity&lt;User&gt; getUserProfile(@PathVariable Long userId) {
+<span class="nc" id="L84">        return userController.getUserById(userId);</span>
+    }
+
+    // View user profile and borrowed books
+    @GetMapping(&quot;/users/byname/{username}&quot;)
+    public ResponseEntity&lt;User&gt; getUserProfileByUsername(@PathVariable String username) {
+<span class="nc" id="L90">        return userController.getUserByUsername(username);</span>
+    }
+
+    /* 
+    @GetMapping(&quot;/users/{username}/borrowed-books&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBorrowedBooksByUser(@PathVariable String username) {
+        List&lt;Book&gt; borrowedBooks = borrowingController.getBorrowedBooksByUser(username);
+        return ResponseEntity.ok(borrowedBooks);
+    }
+    */
+
+    @GetMapping(&quot;/users/{username}/borrowed-books&quot;)
+    public ResponseEntity&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt; getBorrowedBooksByUser(@PathVariable String username) {
+<span class="nc" id="L103">        return borrowingController.getBorrowedBooksByUser(username);</span>
+    }
+
+    @DeleteMapping(&quot;books/{bookId}/users/{userId}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteBorrowing(@PathVariable Long bookId, @PathVariable Long userId) {
+<span class="fc" id="L108">        borrowingController.deleteBorrowing(bookId, userId);</span>
+<span class="fc" id="L109">        bookController.deleteBook(bookId);</span>
+<span class="fc" id="L110">        userController.deleteUser(userId);</span>
+<span class="fc" id="L111">        return ResponseEntity.noContent().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

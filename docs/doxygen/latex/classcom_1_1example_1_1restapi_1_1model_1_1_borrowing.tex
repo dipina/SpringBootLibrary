@@ -1,0 +1,185 @@
+\doxysection{com.\+example.\+restapi.\+model.\+Borrowing Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing}{}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing}\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+
+
+A JPA entity representing a borrowing record.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a68669bda0f7a74e9ac88ec23819589ce}{Borrowing}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_acadc92cc030a13d692eb02461aa28b8f}{Borrowing}} (\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}} user, \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}} book)
+\begin{DoxyCompactList}\small\item\em Constructor to create a new borrowing record. \end{DoxyCompactList}\item 
+Long \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a0a5185eb7c68c9f567059fc4acbd68f2}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier of the borrowing record. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}} \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_adaf5f15d77093c847e0c15434e65904a}{get\+User}} ()
+\begin{DoxyCompactList}\small\item\em Gets the user associated with this borrowing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}} \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a9c1830386c430cb1b041fb227c23b749}{get\+Book}} ()
+\begin{DoxyCompactList}\small\item\em Gets the book associated with this borrowing. \end{DoxyCompactList}\item 
+Local\+Date\+Time \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ac8422ffdabe570e0b1adb177d875dd3e}{get\+Borrow\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Gets the date and time when the book was borrowed. \end{DoxyCompactList}\item 
+Local\+Date\+Time \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ab18f8b6fb94e4b54d7b9d3e61b63af18}{get\+Return\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Gets the date and time when the book was returned. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a1fde0382c6dd208098001977408034bc}{set\+Return\+Date}} (Local\+Date\+Time return\+Date)
+\begin{DoxyCompactList}\small\item\em Sets the date and time when the book was returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A JPA entity representing a borrowing record. 
+
+This entity manages information regarding the borrowing and returning of a {\ttfamily \doxylink{}{Book}} by a {\ttfamily \doxylink{}{User}}. 
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00031}{31}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a68669bda0f7a74e9ac88ec23819589ce}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a68669bda0f7a74e9ac88ec23819589ce} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!Borrowing@{Borrowing}}
+\index{Borrowing@{Borrowing}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{Borrowing()}{Borrowing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily com.\+example.\+restapi.\+model.\+Borrowing.\+Borrowing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Required by JPA for entity instantiation. 
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00077}{77}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_acadc92cc030a13d692eb02461aa28b8f}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_acadc92cc030a13d692eb02461aa28b8f} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!Borrowing@{Borrowing}}
+\index{Borrowing@{Borrowing}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{Borrowing()}{Borrowing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily com.\+example.\+restapi.\+model.\+Borrowing.\+Borrowing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}}]{user,  }\item[{\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}}]{book }\end{DoxyParamCaption})}
+
+
+
+Constructor to create a new borrowing record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & the user borrowing the book \\
+\hline
+{\em book} & the book being borrowed\\
+\hline
+\end{DoxyParams}
+The borrow date is initialized to the current time, and the return date is set to {\ttfamily null}. 
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00088}{88}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a9c1830386c430cb1b041fb227c23b749}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a9c1830386c430cb1b041fb227c23b749} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!getBook@{getBook}}
+\index{getBook@{getBook}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{getBook()}{getBook()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}} com.\+example.\+restapi.\+model.\+Borrowing.\+get\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the book associated with this borrowing. 
+
+\begin{DoxyReturn}{Returns}
+the {\ttfamily \doxylink{}{Book}} that was borrowed 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00114}{114}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ac8422ffdabe570e0b1adb177d875dd3e}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ac8422ffdabe570e0b1adb177d875dd3e} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!getBorrowDate@{getBorrowDate}}
+\index{getBorrowDate@{getBorrowDate}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{getBorrowDate()}{getBorrowDate()}}
+{\footnotesize\ttfamily Local\+Date\+Time com.\+example.\+restapi.\+model.\+Borrowing.\+get\+Borrow\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the date and time when the book was borrowed. 
+
+\begin{DoxyReturn}{Returns}
+the borrow date and time 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00121}{121}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a0a5185eb7c68c9f567059fc4acbd68f2}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a0a5185eb7c68c9f567059fc4acbd68f2} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!getId@{getId}}
+\index{getId@{getId}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily Long com.\+example.\+restapi.\+model.\+Borrowing.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the unique identifier of the borrowing record. 
+
+\begin{DoxyReturn}{Returns}
+the borrowing record ID 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00100}{100}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ab18f8b6fb94e4b54d7b9d3e61b63af18}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_ab18f8b6fb94e4b54d7b9d3e61b63af18} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!getReturnDate@{getReturnDate}}
+\index{getReturnDate@{getReturnDate}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{getReturnDate()}{getReturnDate()}}
+{\footnotesize\ttfamily Local\+Date\+Time com.\+example.\+restapi.\+model.\+Borrowing.\+get\+Return\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the date and time when the book was returned. 
+
+\begin{DoxyReturn}{Returns}
+the return date and time, or {\ttfamily null} if not yet returned 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00128}{128}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_adaf5f15d77093c847e0c15434e65904a}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_adaf5f15d77093c847e0c15434e65904a} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!getUser@{getUser}}
+\index{getUser@{getUser}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}} com.\+example.\+restapi.\+model.\+Borrowing.\+get\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the user associated with this borrowing. 
+
+\begin{DoxyReturn}{Returns}
+the {\ttfamily \doxylink{}{User}} who borrowed the book 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00107}{107}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a1fde0382c6dd208098001977408034bc}\label{classcom_1_1example_1_1restapi_1_1model_1_1_borrowing_a1fde0382c6dd208098001977408034bc} 
+\index{com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}!setReturnDate@{setReturnDate}}
+\index{setReturnDate@{setReturnDate}!com.example.restapi.model.Borrowing@{com.example.restapi.model.Borrowing}}
+\doxysubsubsection{\texorpdfstring{setReturnDate()}{setReturnDate()}}
+{\footnotesize\ttfamily void com.\+example.\+restapi.\+model.\+Borrowing.\+set\+Return\+Date (\begin{DoxyParamCaption}\item[{Local\+Date\+Time}]{return\+Date }\end{DoxyParamCaption})}
+
+
+
+Sets the date and time when the book was returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em return\+Date} & the return date and time \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_borrowing_8java_source_l00135}{135}} of file \mbox{\hyperlink{_borrowing_8java_source}{Borrowing.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/model/\mbox{\hyperlink{_borrowing_8java}{Borrowing.\+java}}\end{DoxyCompactItemize}

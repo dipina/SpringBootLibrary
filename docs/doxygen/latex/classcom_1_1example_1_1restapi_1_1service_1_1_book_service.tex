@@ -1,0 +1,156 @@
+\doxysection{com.\+example.\+restapi.\+service.\+Book\+Service Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service}{}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service}\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ac10621ceddc2e40d33855637eddd94c1}{get\+All\+Books}} ()
+\item 
+Optional$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ab6d33c8554eb7f8df1833d97d62ba102}{get\+Book\+By\+Id}} (Long id)
+\item 
+Book \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ace0c7135d9cb8a478697e529bece9675}{create\+Book}} (Book book)
+\item 
+Book \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a2c827897a7c7ecdbaea61000b8323515}{update\+Book}} (Long id, Book book\+Details)  throws Exception 
+\item 
+void \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ad6ddd29bd727751057a269184a713d09}{delete\+Book}} (Long id)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a3ddbde15bd87a64929da5c68211bacac}{borrow\+Book}} (Long book\+Id, Long user\+Id)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a1d87ae30c4c73e339d5081905fe3e59a}{return\+Book}} (Long book\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service class that provides business logic for managing {\ttfamily \doxylink{}{Book}} and borrowing operations. 
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00016}{16}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a3ddbde15bd87a64929da5c68211bacac}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a3ddbde15bd87a64929da5c68211bacac} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!borrowBook@{borrowBook}}
+\index{borrowBook@{borrowBook}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{borrowBook()}{borrowBook()}}
+{\footnotesize\ttfamily boolean com.\+example.\+restapi.\+service.\+Book\+Service.\+borrow\+Book (\begin{DoxyParamCaption}\item[{Long}]{book\+Id,  }\item[{Long}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00080}{80}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ace0c7135d9cb8a478697e529bece9675}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ace0c7135d9cb8a478697e529bece9675} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!createBook@{createBook}}
+\index{createBook@{createBook}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{createBook()}{createBook()}}
+{\footnotesize\ttfamily Book com.\+example.\+restapi.\+service.\+Book\+Service.\+create\+Book (\begin{DoxyParamCaption}\item[{Book}]{book }\end{DoxyParamCaption})}
+
+Creates a new book entry in the repository.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book} & the {\ttfamily \doxylink{}{Book}} object to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created {\ttfamily \doxylink{}{Book}} object 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00050}{50}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ad6ddd29bd727751057a269184a713d09}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ad6ddd29bd727751057a269184a713d09} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!deleteBook@{deleteBook}}
+\index{deleteBook@{deleteBook}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{deleteBook()}{deleteBook()}}
+{\footnotesize\ttfamily void com.\+example.\+restapi.\+service.\+Book\+Service.\+delete\+Book (\begin{DoxyParamCaption}\item[{Long}]{id }\end{DoxyParamCaption})}
+
+Deletes the Book identified by id. delete\+Book() needs to be public because it is used by clients who wish to remove books identified by id 
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00076}{76}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ac10621ceddc2e40d33855637eddd94c1}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ac10621ceddc2e40d33855637eddd94c1} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!getAllBooks@{getAllBooks}}
+\index{getAllBooks@{getAllBooks}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{getAllBooks()}{getAllBooks()}}
+{\footnotesize\ttfamily List$<$ Book $>$ com.\+example.\+restapi.\+service.\+Book\+Service.\+get\+All\+Books (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves all books from the repository.
+
+\begin{DoxyReturn}{Returns}
+a list of all {\ttfamily \doxylink{}{Book}} objects 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00030}{30}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ab6d33c8554eb7f8df1833d97d62ba102}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_ab6d33c8554eb7f8df1833d97d62ba102} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!getBookById@{getBookById}}
+\index{getBookById@{getBookById}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{getBookById()}{getBookById()}}
+{\footnotesize\ttfamily Optional$<$ Book $>$ com.\+example.\+restapi.\+service.\+Book\+Service.\+get\+Book\+By\+Id (\begin{DoxyParamCaption}\item[{Long}]{id }\end{DoxyParamCaption})}
+
+Retrieves a book by its unique identifier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the book to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an {\ttfamily \doxylink{}{Optional}} containing the found {\ttfamily \doxylink{}{Book}}, or empty if not found 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00040}{40}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a1d87ae30c4c73e339d5081905fe3e59a}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a1d87ae30c4c73e339d5081905fe3e59a} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!returnBook@{returnBook}}
+\index{returnBook@{returnBook}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{returnBook()}{returnBook()}}
+{\footnotesize\ttfamily boolean com.\+example.\+restapi.\+service.\+Book\+Service.\+return\+Book (\begin{DoxyParamCaption}\item[{Long}]{book\+Id }\end{DoxyParamCaption})}
+
+Returns a borrowed book, making it available for others.
+
+
+\begin{DoxyParams}{Parameters}
+{\em book\+Id} & the ID of the book to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the return was successful, {\ttfamily false} otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00100}{100}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a2c827897a7c7ecdbaea61000b8323515}\label{classcom_1_1example_1_1restapi_1_1service_1_1_book_service_a2c827897a7c7ecdbaea61000b8323515} 
+\index{com.example.restapi.service.BookService@{com.example.restapi.service.BookService}!updateBook@{updateBook}}
+\index{updateBook@{updateBook}!com.example.restapi.service.BookService@{com.example.restapi.service.BookService}}
+\doxysubsubsection{\texorpdfstring{updateBook()}{updateBook()}}
+{\footnotesize\ttfamily Book com.\+example.\+restapi.\+service.\+Book\+Service.\+update\+Book (\begin{DoxyParamCaption}\item[{Long}]{id,  }\item[{Book}]{book\+Details }\end{DoxyParamCaption}) throws Exception}
+
+Updates an existing book\textquotesingle{}s details.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the ID of the book to update \\
+\hline
+{\em book\+Details} & the updated {\ttfamily \doxylink{}{Book}} details \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the updated {\ttfamily \doxylink{}{Book}} object 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if the book with the specified ID is not found \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_book_service_8java_source_l00063}{63}} of file \mbox{\hyperlink{_book_service_8java_source}{Book\+Service.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/service/\mbox{\hyperlink{_book_service_8java}{Book\+Service.\+java}}\end{DoxyCompactItemize}
