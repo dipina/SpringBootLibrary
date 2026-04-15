@@ -1,0 +1,56 @@
+\doxysection{Borrowing\+Repository.\+java}
+\hypertarget{_borrowing_repository_8java_source}{}\label{_borrowing_repository_8java_source}\index{src/main/java/com/example/restapi/repository/BorrowingRepository.java@{src/main/java/com/example/restapi/repository/BorrowingRepository.java}}
+\mbox{\hyperlink{_borrowing_repository_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00001}00001\ \textcolor{keyword}{package\ }com.example.restapi.repository;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00003}00003\ \textcolor{keyword}{import}\ com.example.restapi.model.Book;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00004}00004\ \textcolor{keyword}{import}\ com.example.restapi.model.Borrowing;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.springframework.data.jpa.repository.JpaRepository;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.springframework.data.jpa.repository.Query;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.springframework.data.repository.query.Param;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.springframework.stereotype.Repository;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00013}00013\ @Repository}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00014}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository}{BorrowingRepository}}\ \textcolor{keyword}{extends}\ JpaRepository<Borrowing,\ Long>\ \{}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00015}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad02dffcc224f81a9d0de059d261340a9}{00015}}\ \ \ \ \ List<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad02dffcc224f81a9d0de059d261340a9}{findByUserId}}(Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00016}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0a5d7745ede3389bf3db4234c1008f85}{00016}}\ \ \ \ \ List<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0a5d7745ede3389bf3db4234c1008f85}{findByBookId}}(Long\ bookId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00017}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a3812d7735e03a5e411afc9908a7a37b9}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a3812d7735e03a5e411afc9908a7a37b9}{deleteByBookId}}(Long\ bookId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Find\ the\ latest\ borrowing\ record\ of\ a\ user\ for\ a\ specific\ book}}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00020}00020\ \ \ \ \ @Query(\textcolor{stringliteral}{"{}SELECT\ b\ FROM\ Borrowing\ b\ WHERE\ b.book.id\ =\ :bookId\ AND\ b.user.id\ =\ :userId\ ORDER\ BY\ b.borrowDate\ DESC\ LIMIT\ 1"{}})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00021}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a5a7b3563fcb3826153e4a63656e0b090}{00021}}\ \ \ \ \ Borrowing\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a5a7b3563fcb3826153e4a63656e0b090}{findLatestBorrowing}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Add\ this\ query\ to\ return\ a\ list\ of\ books\ borrowed\ by\ a\ user}}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00025}00025\ \ \ \ \ @Query("{}SELECT\ b\ FROM\ Book\ b\ JOIN\ Borrowing\ br\ ON\ br.book.\textcolor{keywordtype}{id}\ =\ b.\textcolor{keywordtype}{id}\ WHERE\ br.user.\textcolor{keywordtype}{id}\ =\ :userId"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00026}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0041700cb7b137f8ff8fda905da731b6}{00026}}\ \ \ \ \ List<Book>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a0041700cb7b137f8ff8fda905da731b6}{findBooksByUserId}}(Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ Add\ this\ query\ to\ return\ a\ list\ of\ books\ borrowed\ by\ a\ user\ which\ have\ not\ be\ returned}}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00029}00029\ \ \ \ \ @Query("{}SELECT\ b\ FROM\ Book\ b\ JOIN\ Borrowing\ br\ ON\ br.book.\textcolor{keywordtype}{id}\ =\ b.\textcolor{keywordtype}{id}\ WHERE\ br.user.\textcolor{keywordtype}{id}\ =\ :userId\ AND\ br.returnDate\ IS\ NULL"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00030}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_abf82a32e61062e4964ac690416e6e180}{00030}}\ \ \ \ \ List<Book>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_abf82a32e61062e4964ac690416e6e180}{findBooksBorrowedByUserId}}(Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Fetch\ Borrowing\ details\ for\ a\ specific\ user\ and\ book}}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00033}00033\ \ \ \ \ @Query("{}SELECT\ br\ FROM\ Borrowing\ br\ WHERE\ br.book.\textcolor{keywordtype}{id}\ =\ :bookId\ AND\ br.user.\textcolor{keywordtype}{id}\ =\ :userId"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00034}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a65e93501d1ad0dfaa63fc87a8b9a10cf}{00034}}\ \ \ \ \ List<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a65e93501d1ad0dfaa63fc87a8b9a10cf}{findBorrowingsByBookIdAndUserId}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00036}00036\ \ \ \ \ @Query("{}SELECT\ b\ FROM\ Borrowing\ b\ WHERE\ b.book.\textcolor{keywordtype}{id}\ =\ :bookId\ AND\ b.user.\textcolor{keywordtype}{id}\ =\ :userId\ AND\ b.returnDate\ IS\ NULL"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00037}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_aea6b0f3192e1ab446a1a131fc731e333}{00037}}\ \ \ \ \ List<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_aea6b0f3192e1ab446a1a131fc731e333}{findActiveBorrowingsByBookIdAndUserId}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00039}00039\ \ \ \ \ @Query("{}SELECT\ b\ FROM\ Borrowing\ b\ WHERE\ b.book.\textcolor{keywordtype}{id}\ =\ :bookId\ AND\ b.user.\textcolor{keywordtype}{id}\ =\ :userId\ AND\ b.returnDate\ IS\ NULL"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00040}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ae95ea58888e07079e6c68cd6065eb2dc}{00040}}\ \ \ \ \ Optional<List<Borrowing>>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ae95ea58888e07079e6c68cd6065eb2dc}{findActiveBorrowingByBookIdAndUserId}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00042}00042\ \ \ \ \ @Query(value\ =\ "{}SELECT\ *\ FROM\ borrowings\ WHERE\ book\_id\ =\ :bookId\ AND\ user\_id\ =\ :userId\ AND\ return\_date\ IS\ NULL\ ORDER\ BY\ borrow\_date\ DESC\ LIMIT\ 1"{},\ nativeQuery\ =\ true)}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00043}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a8e18b866d1347fe9431609b1818d2be7}{00043}}\ \ \ \ \ Optional<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_a8e18b866d1347fe9431609b1818d2be7}{findLatestBorrowedBook}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00046}00046\ \ \ \ \ @Query("{}SELECT\ b\ FROM\ Borrowing\ b\ WHERE\ b.book.\textcolor{keywordtype}{id}\ =\ :bookId\ AND\ b.returnDate\ IS\ NULL"{})}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00047}\mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad1322efaf106fb480504860ccab71093}{00047}}\ \ \ \ \ List<Borrowing>\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository_ad1322efaf106fb480504860ccab71093}{findActiveBorrowingsByBookId}}(Long\ bookId,\ Long\ userId);}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_borrowing_repository_8java_source_l00050}00050\ }
+
+\end{DoxyCode}

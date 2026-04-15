@@ -1,0 +1,80 @@
+\doxysection{com.\+example.\+restapi.\+controller.\+Book\+Controller Class Reference}
+\hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}{}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller}\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798}{get\+All\+Books}} ()
+\item 
+Response\+Entity$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad23204694137593d8a48bd81342aeeb1}{get\+Book\+By\+Id}} (@Path\+Variable Long id)
+\item 
+Response\+Entity$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3}{create\+Book}} (@Request\+Body Book book)
+\item 
+Response\+Entity$<$ Book $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad65e19040f9ffd0d1ce992405e76a88d}{update\+Book}} (@Path\+Variable Long id, @Request\+Body Book book\+Details)
+\item 
+Response\+Entity$<$ Void $>$ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825}{delete\+Book}} (@Path\+Variable Long id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00017}{17}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a0fdd7855bd1ab913764f898260509ab3} 
+\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}!createBook@{createBook}}
+\index{createBook@{createBook}!com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection{\texorpdfstring{createBook()}{createBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Book $>$ com.\+example.\+restapi.\+controller.\+Book\+Controller.\+create\+Book (\begin{DoxyParamCaption}\item[{@Request\+Body Book}]{book }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00034}{34}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_a485d7014e3fae2d219156ed16525a825} 
+\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}!deleteBook@{deleteBook}}
+\index{deleteBook@{deleteBook}!com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection{\texorpdfstring{deleteBook()}{deleteBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Void $>$ com.\+example.\+restapi.\+controller.\+Book\+Controller.\+delete\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00056}{56}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_af1112e6b3b2ba26f6e49dbe704d5a798} 
+\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}!getAllBooks@{getAllBooks}}
+\index{getAllBooks@{getAllBooks}!com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection{\texorpdfstring{getAllBooks()}{getAllBooks()}}
+{\footnotesize\ttfamily List$<$ Book $>$ com.\+example.\+restapi.\+controller.\+Book\+Controller.\+get\+All\+Books (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00023}{23}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad23204694137593d8a48bd81342aeeb1}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad23204694137593d8a48bd81342aeeb1} 
+\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}!getBookById@{getBookById}}
+\index{getBookById@{getBookById}!com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection{\texorpdfstring{getBookById()}{getBookById()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Book $>$ com.\+example.\+restapi.\+controller.\+Book\+Controller.\+get\+Book\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00028}{28}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+\Hypertarget{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad65e19040f9ffd0d1ce992405e76a88d}\label{classcom_1_1example_1_1restapi_1_1controller_1_1_book_controller_ad65e19040f9ffd0d1ce992405e76a88d} 
+\index{com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}!updateBook@{updateBook}}
+\index{updateBook@{updateBook}!com.example.restapi.controller.BookController@{com.example.restapi.controller.BookController}}
+\doxysubsubsection{\texorpdfstring{updateBook()}{updateBook()}}
+{\footnotesize\ttfamily Response\+Entity$<$ Book $>$ com.\+example.\+restapi.\+controller.\+Book\+Controller.\+update\+Book (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id,  }\item[{@Request\+Body Book}]{book\+Details }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_book_controller_8java_source_l00046}{46}} of file \mbox{\hyperlink{_book_controller_8java_source}{Book\+Controller.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/com/example/restapi/controller/\mbox{\hyperlink{_book_controller_8java}{Book\+Controller.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BorrowingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.service</a> &gt; <span class="el_source">BorrowingService.java</span></div><h1>BorrowingService.java</h1><pre class="source lang-java linenums">package com.example.restapi.service;
+
+import com.example.restapi.model.Book;
+import com.example.restapi.model.Borrowing;
+import com.example.restapi.model.User;
+import com.example.restapi.repository.BookRepository;
+import com.example.restapi.repository.BorrowingRepository;
+import com.example.restapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+<span class="fc" id="L22">public class BorrowingService {</span>
+
+    @Autowired
+    private BookRepository bookRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private BorrowingRepository borrowingRepository;
+
+    public List&lt;Borrowing&gt; getAllBorrowings() {
+<span class="fc" id="L32">        return borrowingRepository.findAll();</span>
+    }
+
+    public boolean borrowBook(Long bookId, User user) {
+<span class="fc" id="L36">        Optional&lt;Book&gt; optionalBook = bookRepository.findById(bookId);</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (optionalBook.isPresent()) {</span>
+<span class="fc" id="L38">            Book book = optionalBook.get();</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (book.getBorrower() == null) {</span>
+<span class="fc" id="L40">                book.setBorrower(user);</span>
+<span class="fc" id="L41">                bookRepository.save(book);</span>
+<span class="fc" id="L42">                Borrowing borrowing = new Borrowing(user, book);</span>
+<span class="fc" id="L43">                borrowingRepository.save(borrowing);</span>
+<span class="fc" id="L44">                return true;</span>
+            }
+        }
+<span class="nc" id="L47">        return false;</span>
+    }
+
+    public boolean returnBook(Long bookId) {
+<span class="fc" id="L51">        Optional&lt;Book&gt; optionalBook = bookRepository.findById(bookId);</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">        if (optionalBook.isPresent()) {</span>
+<span class="fc" id="L53">            Book book = optionalBook.get();</span>
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">            if (book.getBorrower() != null) {</span>
+<span class="fc" id="L55">                Long borrowerId= book.getBorrower().getId();</span>
+<span class="fc" id="L56">                book.setBorrower(null);</span>
+<span class="fc" id="L57">                bookRepository.save(book);</span>
+<span class="fc" id="L58">                System.out.println(&quot;Going to call to this.getBorrowingDetails&quot;);</span>
+<span class="fc" id="L59">                Optional&lt;Borrowing&gt; optionalBorrowing = this.getBorrowingDetails(book.getId(), borrowerId);</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">                if (optionalBorrowing.isPresent()) {</span>
+<span class="fc" id="L61">                    Borrowing borrowing = optionalBorrowing.get();</span>
+<span class="fc" id="L62">                    borrowing.setReturnDate(LocalDateTime.now());</span>
+<span class="fc" id="L63">                    borrowingRepository.save(borrowing);</span>
+                    //borrowingRepository.deleteById(borrowing.getId());
+                }
+<span class="fc" id="L66">                return true;</span>
+            }
+        }
+<span class="nc" id="L69">        return false;</span>
+    }
+
+    /* 
+    public List&lt;Book&gt; getBorrowedBooksByUser(String username) {
+        Optional&lt;User&gt; userOptional = userRepository.findByUsername(username); // Already returns Optional&lt;User&gt;
+        
+        if (userOptional.isEmpty()) {
+            return List.of(); // Return empty list if user is not found
+        }
+    
+        return borrowingRepository.findBooksByUserId(userOptional.get().getId());
+    }*/
+
+    public List&lt;Map&lt;String, Object&gt;&gt; getBorrowedBooksByUser(String username) {
+<span class="nc" id="L84">        Optional&lt;User&gt; userOptional = userRepository.findByUsername(username);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if (userOptional.isEmpty()) {</span>
+<span class="nc" id="L86">            return Collections.emptyList(); // Return an empty list if user is not found</span>
+        }
+
+<span class="nc" id="L89">        User user = userOptional.get();</span>
+<span class="nc" id="L90">        List&lt;Borrowing&gt; borrowings = new ArrayList&lt;&gt;();</span>
+
+
+        //borrowingRepository.findActiveBorrowingsByBookIdAndUserId(null, null)
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        for (Book book : borrowingRepository.findBooksBorrowedByUserId(user.getId())) {</span>
+<span class="nc" id="L95">            System.out.println(book);</span>
+<span class="nc" id="L96">            borrowings.addAll(borrowingRepository.findActiveBorrowingsByBookId(book.getId(), user.getId()));</span>
+<span class="nc" id="L97">        }</span>
+
+        // Convert borrowings to a list of maps
+<span class="nc" id="L100">        List&lt;Map&lt;String, Object&gt;&gt; borrowedBooks = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        for (Borrowing borrowing : borrowings) {</span>
+<span class="nc" id="L102">            Map&lt;String, Object&gt; bookData = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L103">            bookData.put(&quot;title&quot;, borrowing.getBook().getTitle());</span>
+<span class="nc" id="L104">            bookData.put(&quot;author&quot;, borrowing.getBook().getAuthor());</span>
+<span class="nc" id="L105">            bookData.put(&quot;borrowDate&quot;, borrowing.getBorrowDate());</span>
+
+<span class="nc" id="L107">            borrowedBooks.add(bookData);</span>
+<span class="nc" id="L108">        }</span>
+
+<span class="nc" id="L110">        return borrowedBooks;</span>
+    }
+
+    public Optional&lt;Borrowing&gt; getBorrowingDetails(Long bookId, Long userId) {
+        //return borrowingRepository.findBorrowingsByBookIdAndUserId(bookId, userId);
+<span class="fc" id="L115">        return borrowingRepository.findLatestBorrowedBook(bookId, userId);</span>
+    }    
+
+    public List&lt;Borrowing&gt; getBorrowingsDetails(Long bookId, Long userId) {
+        //return borrowingRepository.findBorrowingsByBookIdAndUserId(bookId, userId);
+<span class="nc" id="L120">        return borrowingRepository.findActiveBorrowingsByBookIdAndUserId(bookId, userId);</span>
+    }    
+
+
+    @Transactional
+    public void deleteByBookUserId(Long bookId, Long userId) {
+<span class="fc" id="L126">        Borrowing latestBorrowing = borrowingRepository.findLatestBorrowing(bookId, userId);</span>
+<span class="pc bpc" id="L127" title="1 of 2 branches missed.">        if (latestBorrowing != null) {</span>
+<span class="fc" id="L128">            borrowingRepository.delete(latestBorrowing);</span>
+        }
+<span class="fc" id="L130">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">springboot-library-api-app</a> &gt; <a href="index.source.html" class="el_package">com.example.restapi.model</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package com.example.restapi.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = &quot;books&quot;)
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String author;
+    
+    @ManyToOne
+    //@JoinColumn(name = &quot;user_id&quot;)
+    @JoinColumn(name = &quot;user_id&quot;, nullable = true) // Allows null values
+    private User user;
+
+<span class="fc" id="L19">    public Book() {}</span>
+
+<span class="fc" id="L21">    public Book(String title, String author) {</span>
+<span class="fc" id="L22">        this.title = title;</span>
+<span class="fc" id="L23">        this.author = author;</span>
+<span class="fc" id="L24">    }</span>
+
+    public Long getId() {
+<span class="fc" id="L27">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L31">        this.id = id;</span>
+<span class="fc" id="L32">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L35">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L39">        this.title = title;</span>
+<span class="fc" id="L40">    }</span>
+
+    public String getAuthor() {
+<span class="fc" id="L43">        return author;</span>
+    }
+
+    public void setAuthor(String author) {
+<span class="fc" id="L47">        this.author = author;</span>
+<span class="fc" id="L48">    }</span>
+
+    public User getBorrower() {
+<span class="fc" id="L51">        return this.user;</span>
+    }
+
+    public void setBorrower(User borrowedBy) {
+<span class="fc" id="L55">        this.user = borrowedBy;</span>
+<span class="fc" id="L56">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
