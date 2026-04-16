@@ -1,4 +1,4 @@
-# Library Borrowing System exemplary project for SPQ subject
+# Library Borrowing System exemplary project for SPQ subject - test CI
 
 ## Purpose
 This application allows users to borrow and return books seamlessly through a shared platform. Users can manage book availability, track borrowed books, and return them, facilitating an efficient book-sharing system.
