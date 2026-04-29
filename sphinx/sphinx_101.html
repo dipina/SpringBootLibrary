@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sphinx 101 — Complete Guide &mdash; SpringBootLibrary Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=3378c5a9"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Docker &amp; Docker Compose" href="docker.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SpringBootLibrary
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">📖 Project Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Project Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#key-features">Key Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#live-documentation-links">Live Documentation Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#repository-structure">Repository Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#mvc-pattern">MVC Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#package-structure">Package Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#key-design-decisions">Key Design Decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#static-resources">Static Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-the-application">Running the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-with-docker">Running with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#quick-reference-maven-commands">Quick Reference: Maven Commands</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🧪 Testing &amp; Quality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Strategy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-tests">Integration Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#performance-tests">Performance Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#code-coverage">Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#static-analysis">Static Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reports.html">Test &amp; Quality Reports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#jacoco-code-coverage">JaCoCo — Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#surefire-unit-test-report">Surefire — Unit Test Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#checkstyle-code-style">Checkstyle — Code Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#pmd-static-analysis">PMD — Static Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#jdepend-package-metrics">JDepend — Package Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#performance-test-report">Performance Test Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#javadoc-api-reference">Javadoc API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#doxygen-technical-reference">Doxygen Technical Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#generating-all-reports-locally">Generating All Reports Locally</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔌 API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_rest.html">REST API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#swagger-ui-live">Swagger UI (Live)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#endpoints-summary">Endpoints Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#books">Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#borrowings">Borrowings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#request-response-examples">Request / Response Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#borrow-a-book">Borrow a book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#return-a-book">Return a book</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javadoc_link.html">Javadoc API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#accessing-the-javadoc">Accessing the Javadoc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#key-documented-classes">Key Documented Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#generating-javadoc-locally">Generating Javadoc Locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#relationship-with-doxygen">Relationship with Doxygen</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🚀 DevOps &amp; CI/CD</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">CI/CD with GitHub Actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cicd.html#workflow-1-maven-site-integration-yml">Workflow 1: <code class="docutils literal notranslate"><span class="pre">maven-site-integration.yml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd.html#workflow-2-sphinx-docs-yml">Workflow 2: <code class="docutils literal notranslate"><span class="pre">sphinx-docs.yml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd.html#github-pages-setup">GitHub Pages Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cicd.html#triggering-workflows-via-api">Triggering Workflows via API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker &amp; Docker Compose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#dockerfile">Dockerfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#docker-compose-yml">docker-compose.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#visualvm-profiling">VisualVM Profiling</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📚 External Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx 101 — Complete Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sphinx">What Is Sphinx?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sphinx-useful-for">What Is Sphinx Useful For?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-vs-alternatives">Sphinx vs. Alternatives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-is-sphinx-used">How Is Sphinx Used?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-sphinx">1. Install Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initialise-a-project">2. Initialise a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-file-structure">3. Source File Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-toctree-directive">4. The <code class="docutils literal notranslate"><span class="pre">toctree</span></code> Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-the-documentation">5. Build the Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-restructuredtext-syntax">6. Key reStructuredText Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#markdown-with-myst">7. Markdown with MyST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-integrate-sphinx-with-github-actions">How to Integrate Sphinx with GitHub Actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#required-repository-settings">Required Repository Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-this-project-uses-sphinx">How This Project Uses Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-architecture">Documentation Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integration-points">Integration Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-new-documentation-page">Adding a New Documentation Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-the-conf-py-extensions-for-this-project">Adding the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> Extensions for This Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-sphinx-resources">Useful Sphinx Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SpringBootLibrary</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sphinx 101 — Complete Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sphinx_101.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sphinx-101-complete-guide">
+<h1>Sphinx 101 — Complete Guide<a class="headerlink" href="#sphinx-101-complete-guide" title="Link to this heading"></a></h1>
+<section id="what-is-sphinx">
+<h2>What Is Sphinx?<a class="headerlink" href="#what-is-sphinx" title="Link to this heading"></a></h2>
+<p><strong>Sphinx</strong> is an open-source documentation generator originally created for the Python language reference documentation (it still powers the official Python docs). Today it is widely used across languages — including Java, C++, and JavaScript projects — whenever developers need to produce structured, professional, multi-page technical documentation from plain text source files.</p>
+<p>Sphinx takes plain text files written in <strong>reStructuredText (<code class="docutils literal notranslate"><span class="pre">.rst</span></code>)</strong> or <strong>Markdown (<code class="docutils literal notranslate"><span class="pre">.md</span></code>, via the MyST parser extension)</strong> and generates:</p>
+<ul class="simple">
+<li><p>Static HTML websites (the most common output)</p></li>
+<li><p>PDF documents (via LaTeX)</p></li>
+<li><p>ePub e-books</p></li>
+<li><p>Man pages</p></li>
+</ul>
+<p>The result is a maintainable, version-controlled documentation site that lives alongside the source code and can be automatically published through CI/CD.</p>
+</section>
+<hr class="docutils" />
+<section id="what-is-sphinx-useful-for">
+<h2>What Is Sphinx Useful For?<a class="headerlink" href="#what-is-sphinx-useful-for" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Use Case</p></th>
+<th class="head"><p>Why Sphinx</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Project portals</strong></p></td>
+<td><p>Aggregates API docs, guides, reports, and tutorials in one navigable site</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>API reference</strong></p></td>
+<td><p>Can auto-import Python docstrings; for Java projects, embeds Javadoc/Doxygen links</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tutorials &amp; how-tos</strong></p></td>
+<td><p>Numbered sections, admonition boxes, code blocks with syntax highlighting</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Multi-version docs</strong></p></td>
+<td><p>Tools like <code class="docutils literal notranslate"><span class="pre">sphinx-multiversion</span></code> serve docs for every tagged release</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Search</strong></p></td>
+<td><p>Built-in full-text client-side search (no server needed)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Cross-references</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:ref:</span></code>, <code class="docutils literal notranslate"><span class="pre">:doc:</span></code> directives create typed links that break at build time if the target disappears</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Theming</strong></p></td>
+<td><p>Dozens of themes (<code class="docutils literal notranslate"><span class="pre">sphinx_rtd_theme</span></code>, <code class="docutils literal notranslate"><span class="pre">furo</span></code>, <code class="docutils literal notranslate"><span class="pre">pydata_sphinx_theme</span></code>) give professional results instantly</p></td>
+</tr>
+</tbody>
+</table>
+<section id="sphinx-vs-alternatives">
+<h3>Sphinx vs. Alternatives<a class="headerlink" href="#sphinx-vs-alternatives" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Primary audience</p></th>
+<th class="head"><p>Markup</p></th>
+<th class="head"><p>Auto-API</p></th>
+<th class="head"><p>Best for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Sphinx</strong></p></td>
+<td><p>Python / polyglot</p></td>
+<td><p>RST / Markdown</p></td>
+<td><p>Python (autodoc)</p></td>
+<td><p>Comprehensive project portals</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Javadoc</strong></p></td>
+<td><p>Java</p></td>
+<td><p>Javadoc tags</p></td>
+<td><p>Yes (Java)</p></td>
+<td><p>API reference only</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Doxygen</strong></p></td>
+<td><p>C/C++/Java</p></td>
+<td><p>Doxygen tags</p></td>
+<td><p>Yes</p></td>
+<td><p>Cross-referenced code ref</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MkDocs</strong></p></td>
+<td><p>Any</p></td>
+<td><p>Markdown</p></td>
+<td><p>No</p></td>
+<td><p>Simple Markdown-first sites</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Docusaurus</strong></p></td>
+<td><p>JS / React</p></td>
+<td><p>Markdown/MDX</p></td>
+<td><p>No</p></td>
+<td><p>Product/SaaS documentation</p></td>
+</tr>
+</tbody>
+</table>
+<p>Sphinx shines when you need a <strong>single portal</strong> that combines hand-written narrative documentation, auto-generated API references, test reports, and external links — exactly the goal of this project.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-is-sphinx-used">
+<h2>How Is Sphinx Used?<a class="headerlink" href="#how-is-sphinx-used" title="Link to this heading"></a></h2>
+<section id="install-sphinx">
+<h3>1. Install Sphinx<a class="headerlink" href="#install-sphinx" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinx-rtd-theme<span class="w"> </span>myst-parser
+</pre></div>
+</div>
+<p>Or pin versions in a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">==</span><span class="mf">7.4.7</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">rtd</span><span class="o">-</span><span class="n">theme</span><span class="o">==</span><span class="mf">2.0.0</span>
+<span class="n">myst</span><span class="o">-</span><span class="n">parser</span><span class="o">==</span><span class="mf">3.0.1</span>
+</pre></div>
+</div>
+</section>
+<section id="initialise-a-project">
+<h3>2. Initialise a Project<a class="headerlink" href="#initialise-a-project" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart<span class="w"> </span>docs-sphinx
+</pre></div>
+</div>
+<p>This interactive wizard creates <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> (the configuration file), <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> (the master table of contents), and a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>.</p>
+</section>
+<section id="source-file-structure">
+<h3>3. Source File Structure<a class="headerlink" href="#source-file-structure" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docs-sphinx/
+├── source/
+│   ├── conf.py        ← Sphinx configuration
+│   ├── index.rst      ← Master table of contents (toctree)
+│   ├── overview.md    ← A page written in Markdown
+│   ├── api.rst        ← A page written in reStructuredText
+│   └── _static/       ← Custom CSS / images
+├── Makefile           ← make html, make pdf, …
+└── requirements.txt   ← Pinned Python dependencies
+</pre></div>
+</div>
+</section>
+<section id="the-toctree-directive">
+<h3>4. The <code class="docutils literal notranslate"><span class="pre">toctree</span></code> Directive<a class="headerlink" href="#the-toctree-directive" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">toctree::</span></code> directive in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> defines the site’s navigation hierarchy:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Project Overview
+
+   overview
+   architecture
+   getting_started
+</pre></div>
+</div>
+<p>Each entry maps to a <code class="docutils literal notranslate"><span class="pre">.rst</span></code> or <code class="docutils literal notranslate"><span class="pre">.md</span></code> file. Sphinx resolves them recursively.</p>
+</section>
+<section id="build-the-documentation">
+<h3>5. Build the Documentation<a class="headerlink" href="#build-the-documentation" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>docs-sphinx
+make<span class="w"> </span>html<span class="w">          </span><span class="c1"># output → _build/html/index.html</span>
+make<span class="w"> </span>latexpdf<span class="w">      </span><span class="c1"># output → _build/latex/*.pdf</span>
+make<span class="w"> </span>clean<span class="w">         </span><span class="c1"># remove previous build artefacts</span>
+</pre></div>
+</div>
+</section>
+<section id="key-restructuredtext-syntax">
+<h3>6. Key reStructuredText Syntax<a class="headerlink" href="#key-restructuredtext-syntax" title="Link to this heading"></a></h3>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Section Heading</span>
+<span class="gh">===============</span>
+
+<span class="gh">Sub-heading</span>
+<span class="gh">-----------</span>
+
+A paragraph with <span class="gs">**bold**</span>, <span class="ge">*italic*</span>, and <span class="s">``inline code``</span>.
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">java</span>
+
+   <span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span>
+   <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+   <span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello from Sphinx!&quot;</span><span class="p">);</span>
+   <span class="w">    </span><span class="p">}</span>
+   <span class="p">}</span>
+
+<span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+   This is an admonition — a highlighted information box.
+
+<span class="p">..</span> <span class="ow">warning</span><span class="p">::</span>
+   This is a warning box.
+</pre></div>
+</div>
+</section>
+<section id="markdown-with-myst">
+<h3>7. Markdown with MyST<a class="headerlink" href="#markdown-with-myst" title="Link to this heading"></a></h3>
+<p>With the <code class="docutils literal notranslate"><span class="pre">myst-parser</span></code> extension enabled in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, you can write pages in Markdown:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># My Page</span>
+
+A paragraph with <span class="gs">**bold**</span> and <span class="ge">*italic*</span>.
+
+<span class="sb">```java</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Hello</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="sb">```</span>
+
+```{note}
+This is a MyST admonition.
+<span class="sb">```</span>
+
+<span class="sb">```{toctree}</span>
+<span class="sb">:maxdepth: 2</span>
+<span class="sb">overview</span>
+<span class="sb">architecture</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-to-integrate-sphinx-with-github-actions">
+<h2>How to Integrate Sphinx with GitHub Actions<a class="headerlink" href="#how-to-integrate-sphinx-with-github-actions" title="Link to this heading"></a></h2>
+<p>The workflow below builds the Sphinx HTML and publishes it to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch using the <code class="docutils literal notranslate"><span class="pre">peaceiris/actions-gh-pages</span></code> action. It preserves other content already on <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> (e.g., Maven Site) via <code class="docutils literal notranslate"><span class="pre">keep_files:</span> <span class="pre">true</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># .github/workflows/sphinx-docs.yml</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Deploy Sphinx Docs</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">       </span><span class="c1"># allow manual trigger</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sphinx</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout repository</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python 3.12</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.12&#39;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache pip packages</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.cache/pip</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-${{ hashFiles(&#39;docs-sphinx/requirements.txt&#39;) }}</span>
+<span class="w">          </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-pip-</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Sphinx &amp; extensions</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r docs-sphinx/requirements.txt</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build Sphinx HTML</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">cd docs-sphinx</span>
+<span class="w">          </span><span class="no">make html</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy to GitHub Pages (sphinx/ subfolder)</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./docs-sphinx/_build/html</span>
+<span class="w">          </span><span class="nt">destination_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx</span><span class="w">     </span><span class="c1"># published at /sphinx/ URL path</span>
+<span class="w">          </span><span class="nt">keep_files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">            </span><span class="c1"># preserve Maven Site &amp; Doxygen content</span>
+</pre></div>
+</div>
+<section id="required-repository-settings">
+<h3>Required Repository Settings<a class="headerlink" href="#required-repository-settings" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Settings → Actions → General → Workflow permissions</strong> → <em>Read and write permissions</em></p></li>
+<li><p><strong>Settings → Pages</strong> → Source: <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch, folder: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+</ol>
+<p>The Sphinx portal will then be live at:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">owner</span><span class="o">&gt;.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/&lt;</span><span class="n">repo</span><span class="o">&gt;/</span><span class="n">sphinx</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="how-this-project-uses-sphinx">
+<h2>How This Project Uses Sphinx<a class="headerlink" href="#how-this-project-uses-sphinx" title="Link to this heading"></a></h2>
+<section id="documentation-architecture">
+<h3>Documentation Architecture<a class="headerlink" href="#documentation-architecture" title="Link to this heading"></a></h3>
+<p>The Sphinx portal for SpringBootLibrary is a <strong>meta-documentation hub</strong> — it does not duplicate content that already lives in other tools; instead it links out to the generated artefacts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GitHub Pages (gh-pages branch)
+├── index.html              ← Landing page redirecting to Sphinx or Maven site
+├── sphinx/                 ← Sphinx portal (this site)
+│   ├── index.html
+│   ├── overview.html
+│   ├── testing.html
+│   ├── reports.html        ← Links to JaCoCo, Surefire, PMD reports
+│   ├── javadoc_link.html   ← Links to Javadoc in site/apidocs/
+│   └── sphinx_101.html     ← This page
+├── site/                   ← Maven Site (Javadoc, JaCoCo, PMD, Checkstyle …)
+│   ├── apidocs/
+│   ├── jacoco/
+│   ├── surefire-report.html
+│   └── …
+└── doxygen/                ← Doxygen cross-referenced HTML
+    └── html/
+</pre></div>
+</div>
+</section>
+<section id="integration-points">
+<h3>Integration Points<a class="headerlink" href="#integration-points" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>External Artefact</p></th>
+<th class="head"><p>Where Sphinx links to it</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Javadoc</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">javadoc_link.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../site/apidocs/index.html</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>JaCoCo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reports.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../site/jacoco/index.html</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Surefire</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reports.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../site/surefire-report.html</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>PMD / Checkstyle</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reports.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../site/pmd.html</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Performance report</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reports.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../site/reports/perf-report.html</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Doxygen</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">javadoc_link.md</span></code> → <code class="docutils literal notranslate"><span class="pre">../doxygen/html/index.html</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adding-a-new-documentation-page">
+<h3>Adding a New Documentation Page<a class="headerlink" href="#adding-a-new-documentation-page" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">docs-sphinx/source/my_page.md</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">my_page</span></code> to the appropriate <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">toctree::</span></code> in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code></p></li>
+<li><p>Push to <code class="docutils literal notranslate"><span class="pre">main</span></code> — the GitHub Actions workflow rebuilds and redeploys automatically</p></li>
+</ol>
+</section>
+<section id="adding-the-conf-py-extensions-for-this-project">
+<h3>Adding the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> Extensions for This Project<a class="headerlink" href="#adding-the-conf-py-extensions-for-this-project" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>    <span class="c1"># auto-import Python docstrings (optional here)</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>   <span class="c1"># adds [source] links</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>   <span class="c1"># Google/NumPy style docstrings</span>
+    <span class="s1">&#39;myst_parser&#39;</span><span class="p">,</span>           <span class="c1"># Markdown .md files</span>
+    <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>      <span class="c1"># Read the Docs theme</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="useful-sphinx-resources">
+<h2>Useful Sphinx Resources<a class="headerlink" href="#useful-sphinx-resources" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Resource</p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Official Sphinx docs</p></td>
+<td><p>https://www.sphinx-doc.org</p></td>
+</tr>
+<tr class="row-odd"><td><p>MyST Markdown parser</p></td>
+<td><p>https://myst-parser.readthedocs.io</p></td>
+</tr>
+<tr class="row-even"><td><p>Read the Docs theme</p></td>
+<td><p>https://sphinx-rtd-theme.readthedocs.io</p></td>
+</tr>
+<tr class="row-odd"><td><p>Furo theme (modern)</p></td>
+<td><p>https://pradyunsg.me/furo</p></td>
+</tr>
+<tr class="row-even"><td><p>sphinx-multiversion</p></td>
+<td><p>https://holzhaus.github.io/sphinx-multiversion</p></td>
+</tr>
+<tr class="row-odd"><td><p>peaceiris/actions-gh-pages</p></td>
+<td><p>https://github.com/peaceiris/actions-gh-pages</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="docker.html" class="btn btn-neutral float-left" title="Docker &amp; Docker Compose" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, dipina.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

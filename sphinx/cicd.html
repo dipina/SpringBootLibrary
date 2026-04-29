@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CI/CD with GitHub Actions &mdash; SpringBootLibrary Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=3378c5a9"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Docker &amp; Docker Compose" href="docker.html" />
+    <link rel="prev" title="Javadoc API Documentation" href="javadoc_link.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SpringBootLibrary
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">📖 Project Overview</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Project Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#purpose">Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#key-features">Key Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#live-documentation-links">Live Documentation Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html#repository-structure">Repository Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#mvc-pattern">MVC Pattern</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#package-structure">Package Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#key-design-decisions">Key Design Decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#static-resources">Static Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-the-application">Running the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#running-with-docker">Running with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#quick-reference-maven-commands">Quick Reference: Maven Commands</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🧪 Testing &amp; Quality</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Strategy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-tests">Integration Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#performance-tests">Performance Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#code-coverage">Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#static-analysis">Static Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reports.html">Test &amp; Quality Reports</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#jacoco-code-coverage">JaCoCo — Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#surefire-unit-test-report">Surefire — Unit Test Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#checkstyle-code-style">Checkstyle — Code Style</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#pmd-static-analysis">PMD — Static Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#jdepend-package-metrics">JDepend — Package Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#performance-test-report">Performance Test Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#javadoc-api-reference">Javadoc API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#doxygen-technical-reference">Doxygen Technical Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html#generating-all-reports-locally">Generating All Reports Locally</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🔌 API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_rest.html">REST API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#swagger-ui-live">Swagger UI (Live)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#endpoints-summary">Endpoints Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#books">Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#borrowings">Borrowings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api_rest.html#request-response-examples">Request / Response Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#borrow-a-book">Borrow a book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_rest.html#return-a-book">Return a book</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="javadoc_link.html">Javadoc API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#accessing-the-javadoc">Accessing the Javadoc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#key-documented-classes">Key Documented Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#generating-javadoc-locally">Generating Javadoc Locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javadoc_link.html#relationship-with-doxygen">Relationship with Doxygen</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">🚀 DevOps &amp; CI/CD</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CI/CD with GitHub Actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-1-maven-site-integration-yml">Workflow 1: <code class="docutils literal notranslate"><span class="pre">maven-site-integration.yml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-2-sphinx-docs-yml">Workflow 2: <code class="docutils literal notranslate"><span class="pre">sphinx-docs.yml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-pages-setup">GitHub Pages Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#triggering-workflows-via-api">Triggering Workflows via API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Docker &amp; Docker Compose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#dockerfile">Dockerfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#docker-compose-yml">docker-compose.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html#visualvm-profiling">VisualVM Profiling</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">📚 External Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_101.html">Sphinx 101 — Complete Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#what-is-sphinx">What Is Sphinx?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#what-is-sphinx-useful-for">What Is Sphinx Useful For?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#sphinx-vs-alternatives">Sphinx vs. Alternatives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#how-is-sphinx-used">How Is Sphinx Used?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#install-sphinx">1. Install Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#initialise-a-project">2. Initialise a Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#source-file-structure">3. Source File Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#the-toctree-directive">4. The <code class="docutils literal notranslate"><span class="pre">toctree</span></code> Directive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#build-the-documentation">5. Build the Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#key-restructuredtext-syntax">6. Key reStructuredText Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#markdown-with-myst">7. Markdown with MyST</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#how-to-integrate-sphinx-with-github-actions">How to Integrate Sphinx with GitHub Actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#required-repository-settings">Required Repository Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#how-this-project-uses-sphinx">How This Project Uses Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#documentation-architecture">Documentation Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#integration-points">Integration Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#adding-a-new-documentation-page">Adding a New Documentation Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sphinx_101.html#adding-the-conf-py-extensions-for-this-project">Adding the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> Extensions for This Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_101.html#useful-sphinx-resources">Useful Sphinx Resources</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SpringBootLibrary</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CI/CD with GitHub Actions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cicd.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ci-cd-with-github-actions">
+<h1>CI/CD with GitHub Actions<a class="headerlink" href="#ci-cd-with-github-actions" title="Link to this heading"></a></h1>
+<p>The project ships with two GitHub Actions workflows:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Workflow file</p></th>
+<th class="head"><p>Trigger</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">maven-site-integration.yml</span></code></p></td>
+<td><p>Push to any branch + cron</p></td>
+<td><p>Build, test, Maven site, deploy to Pages</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sphinx-docs.yml</span></code></p></td>
+<td><p>Push to <code class="docutils literal notranslate"><span class="pre">main</span></code></p></td>
+<td><p>Build Sphinx docs + merge into GitHub Pages</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<section id="workflow-1-maven-site-integration-yml">
+<h2>Workflow 1: <code class="docutils literal notranslate"><span class="pre">maven-site-integration.yml</span></code><a class="headerlink" href="#workflow-1-maven-site-integration-yml" title="Link to this heading"></a></h2>
+<p>This is the main CI/CD workflow. It:</p>
+<ol class="arabic simple">
+<li><p>Starts a MySQL 8 Docker service</p></li>
+<li><p>Waits for the database to be healthy</p></li>
+<li><p>Runs the DB initialisation script</p></li>
+<li><p>Executes integration tests (<code class="docutils literal notranslate"><span class="pre">-Pintegration</span></code>)</p></li>
+<li><p>Generates the full Maven site (Javadoc, JaCoCo, PMD, Checkstyle, Surefire)</p></li>
+<li><p>Copies all Maven site output + Doxygen into the <code class="docutils literal notranslate"><span class="pre">docs/site/</span></code> and <code class="docutils literal notranslate"><span class="pre">docs/doxygen/</span></code> sub-folders</p></li>
+<li><p>Deploys the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory to <strong>GitHub Pages</strong></p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maven Site &amp; Integration Tests</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&#39;**&#39;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0</span><span class="nv"> </span><span class="s">18-23/2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&#39;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;0</span><span class="nv"> </span><span class="s">0-6/2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*&#39;</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build-and-test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">services</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">mysql</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql:8.0</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="w">          </span><span class="nt">MYSQL_DATABASE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libraryapidb</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3306:3306</span>
+<span class="w">        </span><span class="nt">options</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span>
+<span class="w">          </span><span class="no">--health-cmd=&quot;mysqladmin ping -h 127.0.0.1 -uroot -proot&quot;</span>
+<span class="w">          </span><span class="no">--health-interval=10s</span>
+<span class="w">          </span><span class="no">--health-timeout=5s</span>
+<span class="w">          </span><span class="no">--health-retries=5</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up JDK 17</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-java@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;17&#39;</span>
+<span class="w">          </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;temurin&#39;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache Maven</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.m2/repository</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-maven-${{ hashFiles(&#39;**/pom.xml&#39;) }}</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait for MySQL</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">until mysqladmin ping -h 127.0.0.1 -uroot -proot --silent; do sleep 2; done</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Init database</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql -h 127.0.0.1 -uroot -proot &lt; src/main/resources/dbsetup.sql</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Integration tests</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn -Pintegration integration-test</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Maven site</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn site</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish docs to GitHub Pages</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./docs</span>
+<span class="w">          </span><span class="nt">destination_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w">    </span><span class="c1"># serve from root of gh-pages branch</span>
+<span class="w">          </span><span class="nt">keep_files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">       </span><span class="c1"># keep Sphinx output from the other workflow</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="workflow-2-sphinx-docs-yml">
+<h2>Workflow 2: <code class="docutils literal notranslate"><span class="pre">sphinx-docs.yml</span></code><a class="headerlink" href="#workflow-2-sphinx-docs-yml" title="Link to this heading"></a></h2>
+<p>This workflow builds the Sphinx documentation and deploys it to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch <strong>alongside</strong> the Maven site output, without overwriting it.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Deploy Sphinx Docs</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">sphinx</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.12&#39;</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Sphinx dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install -r docs-sphinx/requirements.txt</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build Sphinx HTML</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">cd docs-sphinx</span>
+<span class="w">          </span><span class="no">make html</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Sphinx to GitHub Pages (sphinx/ subfolder)</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./docs-sphinx/_build/html</span>
+<span class="w">          </span><span class="nt">destination_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx</span><span class="w">   </span><span class="c1"># → gh-pages/sphinx/</span>
+<span class="w">          </span><span class="nt">keep_files</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="github-pages-setup">
+<h2>GitHub Pages Setup<a class="headerlink" href="#github-pages-setup" title="Link to this heading"></a></h2>
+<p>To enable GitHub Pages for this repository:</p>
+<ol class="arabic simple">
+<li><p>Go to <strong>Settings → Pages</strong></p></li>
+<li><p>Set <strong>Source</strong> to <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch, root <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>Save — the site will be live at <code class="docutils literal notranslate"><span class="pre">https://&lt;owner&gt;.github.io/SpringBootLibrary/</span></code></p></li>
+</ol>
+<blockquote>
+<div><p><strong>Permissions:</strong> Go to <strong>Settings → Actions → General → Workflow permissions</strong> and set <strong>Read and write permissions</strong> so that the <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN</span></code> can push to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="triggering-workflows-via-api">
+<h2>Triggering Workflows via API<a class="headerlink" href="#triggering-workflows-via-api" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://api.github.com/repos/&lt;owner&gt;/SpringBootLibrary/actions/workflows/sphinx-docs.yml/dispatches<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/vnd.github+json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$PAT_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-GitHub-Api-Version: 2022-11-28&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;ref&quot;:&quot;main&quot;}&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="javadoc_link.html" class="btn btn-neutral float-left" title="Javadoc API Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docker.html" class="btn btn-neutral float-right" title="Docker &amp; Docker Compose" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, dipina.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
