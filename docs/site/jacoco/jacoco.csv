@@ -6,8 +6,8 @@ springboot-library-api-app,com.example.restapi.controller,BorrowingController,14
 springboot-library-api-app,com.example.restapi.controller,UserController,104,49,8,2,20,13,13,4,8,4
 springboot-library-api-app,com.example.restapi.controller,BookController,35,37,1,1,9,9,4,4,3,4
 springboot-library-api-app,com.example.restapi.model,User,7,53,0,0,3,22,2,12,2,12
-springboot-library-api-app,com.example.restapi.model,Book,0,40,0,0,0,17,0,10,0,10
 springboot-library-api-app,com.example.restapi.model,Borrowing,15,22,0,0,5,8,5,3,5,3
+springboot-library-api-app,com.example.restapi.model,Book,0,40,0,0,0,17,0,10,0,10
 springboot-library-api-app,com.example.restapi.service,BorrowingService,101,115,12,6,21,30,11,6,2,6
 springboot-library-api-app,com.example.restapi.service,BookService,35,90,5,5,7,22,8,7,3,7
 springboot-library-api-app,com.example.restapi.service,UserService,5,41,0,0,1,11,1,7,1,7
