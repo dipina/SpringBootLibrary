@@ -24,13 +24,13 @@
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00020}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test}{00020}}\ public\ class\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test}{PerformanceTest}}\ \{}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00021}00021\ }
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00022}00022\ \ \ \ \ @Autowired}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ BookService\ bookService;}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_book_service}{BookService}}\ bookService;}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00024}00024\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00025}00025\ \ \ \ \ @Autowired}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ BorrowingService\ borrowingService;}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service}{BorrowingService}}\ borrowingService;}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00027}00027\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00028}00028\ \ \ \ \ @Autowired}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ UserService\ userService;}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_user_service}{UserService}}\ userService;}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00030}00030\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Should\ be\ static\ or\ new\ instance\ will\ be\ created\ for\ each\ @Test\ method}}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00032}00032\ \ \ \ \ @JUnitPerfTestActiveConfig}
@@ -48,7 +48,7 @@
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00044}00044\ \ \ \ \ @Test}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00045}00045\ \ \ \ \ @JUnitPerfTest(threads\ =\ 10,\ durationMs\ =\ 10000,\ warmUpMs\ =\ 2000)}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00046}00046\ \ \ \ \ @JUnitPerfTestRequirement(executionsPerSec\ =\ 50,\ percentiles\ =\ \textcolor{stringliteral}{"{}95:300ms"{}})}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00047}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_a2d9217ca96c6f91079dc211e0c207be1}{00047}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ testGetAllBooksPerformance()\ \{}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00047}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_a2d9217ca96c6f91079dc211e0c207be1}{00047}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_a2d9217ca96c6f91079dc211e0c207be1}{testGetAllBooksPerformance}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ bookService.getAllBooks();}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00049}00049\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00050}00050\ \ \ \ \ }
@@ -56,7 +56,7 @@
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00052}00052\ \ \ \ \ @Test}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00053}00053\ \ \ \ \ @JUnitPerfTest(threads\ =\ 20,\ durationMs\ =\ 5000,\ warmUpMs\ =\ 1000)}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00054}00054\ \ \ \ \ @JUnitPerfTestRequirement(executionsPerSec\ =\ 50,\ percentiles\ =\ \textcolor{stringliteral}{"{}95:300ms"{}})}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00055}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_abd4bbbace24f4a8638c6315ed2a5c5ac}{00055}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ testGetAllBorrowingsPerformance()\ \{}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00055}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_abd4bbbace24f4a8638c6315ed2a5c5ac}{00055}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_abd4bbbace24f4a8638c6315ed2a5c5ac}{testGetAllBorrowingsPerformance}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ borrowingService.getAllBorrowings();}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00057}00057\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00058}00058\ \ \ \ \ }
@@ -67,7 +67,7 @@
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ executionsPerSec\ =\ 100,}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ allowedErrorPercentage\ =\ 0.10f}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00065}00065\ \ \ \ \ )}
-\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00066}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_ad37b1c24646f48116a58a5e129e913d3}{00066}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ testGetAllUsersPerformance()\ \{}
+\DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00066}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_ad37b1c24646f48116a58a5e129e913d3}{00066}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test_ad37b1c24646f48116a58a5e129e913d3}{testGetAllUsersPerformance}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ userService.getAllUsers();}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00068}00068\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_performance_test_8java_source_l00069}00069\ \}}

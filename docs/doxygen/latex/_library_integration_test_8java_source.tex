@@ -26,20 +26,20 @@
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00022}00022\ \ \ \ \ @Test}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ testUserBorrowsAndReturnsBook()\ \{}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 1:\ Create\ a\ user}}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ User\ user\ =\ \textcolor{keyword}{new}\ User(\textcolor{stringliteral}{"{}john"{}},\ \textcolor{stringliteral}{"{}pass"{}},\ \textcolor{stringliteral}{"{}John\ Doe"{}},\ \textcolor{stringliteral}{"{}john@email.org"{}});}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ ResponseEntity<User>\ userResponse\ =\ restTemplate.postForEntity(\textcolor{stringliteral}{"{}/api/library/users/register"{}},\ user,\ User.class);}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}(\textcolor{stringliteral}{"{}john"{}},\ \textcolor{stringliteral}{"{}pass"{}},\ \textcolor{stringliteral}{"{}John\ Doe"{}},\ \textcolor{stringliteral}{"{}john@email.org"{}});}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ ResponseEntity<User>\ userResponse\ =\ restTemplate.postForEntity(\textcolor{stringliteral}{"{}/api/library/users/register"{}},\ user,\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}.class);}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ assertEquals(HttpStatus.CREATED,\ userResponse.getStatusCode());}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ User\ createdUser\ =\ userResponse.getBody();}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ createdUser\ =\ userResponse.getBody();}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ assertNotNull(createdUser);}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ Long\ userId\ =\ createdUser.getId();}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ Long\ userId\ =\ createdUser.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user_a8de18037de4c9d9478bf0c554f960fc6}{getId}}();}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 2:\ Create\ a\ book}}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ Book\ book\ =\ \textcolor{keyword}{new}\ Book(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ \textcolor{stringliteral}{"{}anonymous"{}});}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ ResponseEntity<Book>\ bookResponse\ =\ restTemplate.postForEntity(\textcolor{stringliteral}{"{}/api/library/books"{}},\ book,\ Book.class);}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ book\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}(\textcolor{stringliteral}{"{}Spring\ Boot\ in\ Action"{}},\ \textcolor{stringliteral}{"{}anonymous"{}});}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ ResponseEntity<Book>\ bookResponse\ =\ restTemplate.postForEntity(\textcolor{stringliteral}{"{}/api/library/books"{}},\ book,\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}.class);}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ assertEquals(HttpStatus.OK,\ bookResponse.getStatusCode());}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ Book\ createdBook\ =\ bookResponse.getBody();}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ createdBook\ =\ bookResponse.getBody();}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ assertNotNull(createdBook);}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ Long\ bookId\ =\ createdBook.getId();}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ Long\ bookId\ =\ createdBook.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book_ab9e15e33f446ce41d888b1b238e1efda}{getId}}();}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00039}00039\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 3:\ Borrow\ the\ book}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ ResponseEntity<Void>\ borrowResponse\ =\ restTemplate.exchange(}
@@ -64,8 +64,8 @@
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00060}00060\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ borrowed\ book}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ borrowed\ book\ using\ a\ traditional\ loop}}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ Book\ borrowedBook\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Book\ bookTemp\ :\ books)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ borrowedBook\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ bookTemp\ :\ books)\ \{}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bookTemp.getId().equals(bookId))\ \{}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ borrowedBook\ =\ bookTemp;}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Exit\ loop\ once\ the\ book\ is\ found}}
@@ -75,7 +75,7 @@
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ the\ book\ is\ found\ and\ is\ borrowed}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ assertNotNull(borrowedBook);}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ assertNotNull(borrowedBook.getBorrower());}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ assertNotNull(borrowedBook.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book_ade4974d2435062db0e0e3471557f23bc}{getBorrower}}());}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 5:\ Return\ the\ book}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ ResponseEntity<Void>\ returnResponse\ =\ restTemplate.exchange(}
@@ -99,8 +99,8 @@
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00095}00095\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ borrowed\ book}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ borrowed\ book\ using\ a\ traditional\ loop}}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ Book\ returnedBook\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (Book\ bookTemp\ :\ books)\ \{}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ returnedBook\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book}{Book}}\ bookTemp\ :\ books)\ \{}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bookTemp.getId().equals(bookId))\ \{}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returnedBook\ =\ bookTemp;}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Exit\ loop\ once\ the\ book\ is\ found}}
@@ -108,7 +108,7 @@
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00105}00105\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ assertNotNull(returnedBook);}
-\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ assertTrue(returnedBook.getBorrower()==\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ assertTrue(returnedBook.\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_book_ade4974d2435062db0e0e3471557f23bc}{getBorrower}}()==\textcolor{keyword}{null});}
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00108}00108\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00109}00109\ }
 \DoxyCodeLine{\Hypertarget{_library_integration_test_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Step\ 7:\ Remove\ borrowing,\ book\ and\ user\ created}}

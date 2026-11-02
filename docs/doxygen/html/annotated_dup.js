@@ -17,9 +17,6 @@ var annotated_dup =
             [ "Borrowing", "classcom_1_1example_1_1restapi_1_1model_1_1_borrowing.html", "classcom_1_1example_1_1restapi_1_1model_1_1_borrowing" ],
             [ "User", "classcom_1_1example_1_1restapi_1_1model_1_1_user.html", "classcom_1_1example_1_1restapi_1_1model_1_1_user" ]
           ] ],
-          [ "performance", "namespacecom_1_1example_1_1restapi_1_1performance.html", [
-            [ "PerformanceTest", "classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test.html", "classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test" ]
-          ] ],
           [ "repository", "namespacecom_1_1example_1_1restapi_1_1repository.html", [
             [ "BookRepository", "interfacecom_1_1example_1_1restapi_1_1repository_1_1_book_repository.html", null ],
             [ "BorrowingRepository", "interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository.html", "interfacecom_1_1example_1_1restapi_1_1repository_1_1_borrowing_repository" ],
@@ -29,6 +26,9 @@ var annotated_dup =
             [ "BookService", "classcom_1_1example_1_1restapi_1_1service_1_1_book_service.html", "classcom_1_1example_1_1restapi_1_1service_1_1_book_service" ],
             [ "BorrowingService", "classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service.html", "classcom_1_1example_1_1restapi_1_1service_1_1_borrowing_service" ],
             [ "UserService", "classcom_1_1example_1_1restapi_1_1service_1_1_user_service.html", "classcom_1_1example_1_1restapi_1_1service_1_1_user_service" ]
+          ] ],
+          [ "performance", "namespacecom_1_1example_1_1restapi_1_1performance.html", [
+            [ "PerformanceTest", "classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test.html", "classcom_1_1example_1_1restapi_1_1performance_1_1_performance_test" ]
           ] ],
           [ "RestApiApplication", "classcom_1_1example_1_1restapi_1_1_rest_api_application.html", null ]
         ] ]

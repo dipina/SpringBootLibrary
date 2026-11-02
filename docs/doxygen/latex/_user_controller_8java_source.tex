@@ -25,19 +25,19 @@
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00021}00021\ @RestController}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00022}00022\ @RequestMapping(\textcolor{stringliteral}{"{}/api/users"{}})}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00023}00023\ @Hidden\ \ \textcolor{comment}{//\ This\ will\ hide\ the\ entire\ UserController\ from\ Swagger}}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00024}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{00024}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{UserController}}\ \{}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ UserService\ userService;}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00024}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller}{00024}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{UserController}}\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_user_service}{UserService}}\ userService;}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00027}00027\ \ \ \ \ @Autowired}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ UserRepository\ userRepository;}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interfacecom_1_1example_1_1restapi_1_1repository_1_1_user_repository}{UserRepository}}\ userRepository;}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00030}00030\ \ \ \ \ @Autowired}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00031}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{UserController}}(UserService\ userService)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00031}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_ad9aacc1029cbeddcf1c5f25eb394b7a3}{UserController}}(\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1service_1_1_user_service}{UserService}}\ userService)\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ this.userService\ =\ userService;}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00033}00033\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00035}00035\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/\{id\}"{}})}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00036}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{00036}}\ \ \ \ \ public\ ResponseEntity<User>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{getUserById}}(@PathVariable\ Long\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00036}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{00036}}\ \ \ \ \ public\ ResponseEntity<\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a66d9ac8c66591044c896e47ca353c424}{getUserById}}(@PathVariable\ Long\ \textcolor{keywordtype}{id})\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ Optional<User>\ user\ =\ userRepository.findById(\textcolor{keywordtype}{id});}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ user.map(ResponseEntity::ok)}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .orElseGet(()\ -\/>\ ResponseEntity.status(HttpStatus.NOT\_FOUND).body(\textcolor{keyword}{null}));}
@@ -45,7 +45,7 @@
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00041}00041\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00042}00042\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00043}00043\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/\{username\}"{}})}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00044}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{00044}}\ \ \ \ \ public\ ResponseEntity<User>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{getUserByUsername}}(@PathVariable\ String\ username)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00044}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{00044}}\ \ \ \ \ public\ ResponseEntity<\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a61eacb7165f3b85a2bd7fb0cfa3edc94}{getUserByUsername}}(@PathVariable\ String\ username)\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ Optional<User>\ user\ =\ userService.findByUsername(username);}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ user.map(ResponseEntity::ok)}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .orElseGet(()\ -\/>\ ResponseEntity.status(HttpStatus.NOT\_FOUND).body(\textcolor{keyword}{null}));}
@@ -58,27 +58,27 @@
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00054}00054\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00056}00056\ \ \ \ \ @PostMapping}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00057}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ ResponseEntity<User>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}{createUser}}(@RequestBody\ User\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00057}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ ResponseEntity<User>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a4d7f2da3a8fdcbde3686defd9467af05}{createUser}}(@RequestBody\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ user)\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(userRepository.save(user));}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00059}00059\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00060}00060\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00061}00061\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/register"{}})}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00062}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{00062}}\ \ \ \ \ public\ ResponseEntity<?>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{register}}(@RequestBody\ User\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00062}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{00062}}\ \ \ \ \ public\ ResponseEntity<?>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a60c7210ffe7481a76d5662e222bb51a6}{register}}(@RequestBody\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ user)\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userService.existsByUsername(user.getUsername()))\ \{}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.status(HttpStatus.BAD\_REQUEST).body(Map.of(\textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}Username\ already\ taken"{}}));}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ResponseEntity.status(HttpStatus.BAD\_REQUEST).body(Map.of(\textcolor{stringliteral}{"{}error"{}},\ \textcolor{stringliteral}{"{}Username\ already\ taken"{}}));}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ User\ savedUser\ =\ userService.saveUser(user);}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ savedUser\ =\ userService.saveUser(user);}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.status(HttpStatus.CREATED).body(savedUser);}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00069}00069\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00070}00070\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00071}00071\ \ \ \ \ @PostMapping(\textcolor{stringliteral}{"{}/login"{}})}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00072}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{00072}}\ \ \ \ \ public\ ResponseEntity<?>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{login}}(@RequestBody\ User\ user,\ HttpSession\ session)\ \{\ \textcolor{comment}{//\ Inject\ HttpSession\ here}}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00072}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{00072}}\ \ \ \ \ public\ ResponseEntity<?>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_adfda58e52837ec59e552cb77b1748c45}{login}}(@RequestBody\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ user,\ HttpSession\ session)\ \{\ \textcolor{comment}{//\ Inject\ HttpSession\ here}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ Optional<User>\ foundUser\ =\ userService.findByUsername(user.getUsername());}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundUser.isPresent()\ \&\&\ foundUser.get().getPassword().equals(user.getPassword()))\ \{\ \textcolor{comment}{//\ Use\ hashing\ in\ real\ case}}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ if\ (foundUser.isPresent()\ \&\&\ foundUser.get().getPassword().equals(user.getPassword()))\ \{\ \textcolor{comment}{//\ Use\ hashing\ in\ real\ case}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ session.setAttribute(\textcolor{stringliteral}{"{}user"{}},\ foundUser.get());\ \textcolor{comment}{//\ Now\ session\ is\ accessible}}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(foundUser.get());\ \ \textcolor{comment}{//\ Return\ user\ object}}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ResponseEntity.ok(foundUser.get());\ \ \textcolor{comment}{//\ Return\ user\ object}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ Map<String,\ String>\ response\ =\ \textcolor{keyword}{new}\ HashMap<>();}
@@ -89,7 +89,7 @@
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00085}00085\ }
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00086}00086\ \ \ \ \ @GetMapping(\textcolor{stringliteral}{"{}/session"{}})}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00087}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b}{00087}}\ \ \ \ \ public\ ResponseEntity<?>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_abbe5693a5225a42e91f8dc9497c5bb7b}{checkSession}}(HttpSession\ session)\ \{}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ User\ user\ =\ (User)\ session.getAttribute(\textcolor{stringliteral}{"{}user"{}});}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}}\ user\ =\ (\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1model_1_1_user}{User}})\ session.getAttribute(\textcolor{stringliteral}{"{}user"{}});}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ !=\ \textcolor{keyword}{null})\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.ok(user);}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
@@ -107,10 +107,10 @@
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00103}\mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d}{00103}}\ \ \ \ \ public\ ResponseEntity<Void>\ \mbox{\hyperlink{classcom_1_1example_1_1restapi_1_1controller_1_1_user_controller_a94d789efc92e15151eda4b8d6398c59d}{deleteUser}}(@PathVariable\ Long\ \textcolor{keywordtype}{id})\ \{}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ Optional<User>\ user\ =\ userService.getUserById(\textcolor{keywordtype}{id});}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user.isPresent())\ \{}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ userService.deleteUser(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.noContent().build();}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ userService.deleteUser(id);}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ResponseEntity.noContent().build();}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ResponseEntity.notFound().build();}
+\DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ResponseEntity.notFound().build();}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00111}00111\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_user_controller_8java_source_l00112}00112\ \}}
